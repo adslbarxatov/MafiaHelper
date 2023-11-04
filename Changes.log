@@ -1,0 +1,17 @@
+Mafia helper: changes log
+
+ToDo:
+- Add mafia boss and kamikaze;
+- Add timer;
+- Add music control;
+- Add activity log;
+- Add rules application switches
+- Add self-application control
+
+Version 1.0:
+• Application core and interface have been implemented with the next initial features:
+  - 8 player roles: townspeople, mafia, doctor, detective, beauty, maniac, priest and thief;
+  - manually controlled order of roles application;
+  - 4 combinable player statuses: alive, voiceable, enabled, revealed;
+  - different results of actions;
+  - dynamic user interface

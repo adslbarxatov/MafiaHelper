@@ -5,8 +5,8 @@ ToDo:
 - Add timer;
 - Add music control;
 - Add activity log;
-- Add rules application switches
-- Add self-application control
+- Add switches for application rules;
+- Add self-targetting control
 
 Version 1.0:
 • Application core and interface have been implemented with the next initial features:

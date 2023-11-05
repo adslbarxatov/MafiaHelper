@@ -125,7 +125,9 @@ Reveal the role
 Save
 Mute
 —
-Steal the role</value>
+Steal the role
+Explode
+—</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>All roles are already in use</value>
@@ -168,14 +170,14 @@ Leave the game?</value>
   <data name="Header5" xml:space="preserve">
     <value>Voices</value>
   </data>
-  <data name="Header6" xml:space="preserve">
-    <value>History</value>
-  </data>
   <data name="MafiaLostMessage" xml:space="preserve">
     <value>Mafia lost!</value>
   </data>
   <data name="MafiaWonMessage" xml:space="preserve">
     <value>Mafia won!</value>
+  </data>
+  <data name="MusicButton" xml:space="preserve">
+    <value>Music</value>
   </data>
   <data name="NightText" xml:space="preserve">
     <value>Night</value>
@@ -195,7 +197,7 @@ To the right of the name, separated by a space ([Space] or [Tab] keys), you can 
     <value>Reset actions</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>OMDCBIPT</value>
+    <value>OMDCBIPTKS</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Townspeople
@@ -205,16 +207,29 @@ Commissioner / detective
 Beauty / prostitute
 Maniac
 Priest / immortal
-Thief</value>
+Thief
+Kamikaze
+Boss of mafia / Don</value>
   </data>
   <data name="RolesOPrefix" xml:space="preserve">
     <value> (or letter isn’t specified)</value>
   </data>
-  <data name="StateText" xml:space="preserve">
-    <value>{0:S} – dead
-{1:S} – muted by maniac
-{2:S} – role is stolen
-{3:S} – role is revealed</value>
+  <data name="StatusesNames" xml:space="preserve">
+    <value>Dead
+Muted
+Role is stolen
+Role is revealed
+Healed / saved</value>
+  </data>
+  <data name="TimerButton" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="TimerLines" xml:space="preserve">
+    <value>1 minute
+2 minutes
+3 minutes
+4 minutes
+5 minutes</value>
   </data>
   <data name="TooMuchPlayersMessage" xml:space="preserve">
     <value>Too much players in the game. The app now supports not more than {0:D} players at a time</value>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RD_AAOW
@@ -8,6 +9,28 @@ namespace RD_AAOW
 	/// </summary>
 	public partial class MafiaHelperForm: Form
 		{
+		/// <summary>
+		/// Возвращает путь к звуку завершения таймера
+		/// </summary>
+		public static string EndTone
+			{
+			get
+				{
+				return RDGenerics.AppStartupPath + "End.mp3";
+				}
+			}
+
+		/// <summary>
+		/// Возвращает путь к звуку реперной точки таймера
+		/// </summary>
+		public static string MidTone
+			{
+			get
+				{
+				return RDGenerics.AppStartupPath + "Mid.mp3";
+				}
+			}
+
 		/// <summary>
 		/// Конструктор. Запускает главную форму
 		/// </summary>
@@ -29,6 +52,20 @@ namespace RD_AAOW
 			catch
 				{
 				LanguageCombo.SelectedIndex = 0;
+				}
+
+			// Попытка создания ресурсов приложения
+			try
+				{
+				if (!File.Exists (EndTone))
+					File.WriteAllBytes (EndTone, Properties.MafiaHelper.EndTone);
+				if (!File.Exists (MidTone))
+					File.WriteAllBytes (MidTone, Properties.MafiaHelper.MidTone);
+				}
+			catch
+				{
+				RDGenerics.MessageBox (RDMessageTypes.Warning_Center,
+					Localization.GetDefaultText (LzDefaultTextValues.Message_PackageSavingFailure));
 				}
 			}
 

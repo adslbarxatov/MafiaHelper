@@ -125,7 +125,9 @@
 Спасти
 Лишить голоса
 —
-Украсть роль</value>
+Украсть роль
+Взорвать
+—</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>Все роли уже используются</value>
@@ -168,14 +170,14 @@
   <data name="Header5" xml:space="preserve">
     <value>Голоса</value>
   </data>
-  <data name="Header6" xml:space="preserve">
-    <value>История</value>
-  </data>
   <data name="MafiaLostMessage" xml:space="preserve">
     <value>Мафия проиграла!</value>
   </data>
   <data name="MafiaWonMessage" xml:space="preserve">
     <value>Мафия победила!</value>
+  </data>
+  <data name="MusicButton" xml:space="preserve">
+    <value>Музыка</value>
   </data>
   <data name="NightText" xml:space="preserve">
     <value>Ночь</value>
@@ -195,7 +197,7 @@
     <value>Сбросить действия</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>ОМДКПНСВ</value>
+    <value>ОМДКПНСВЗГ</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Обыватель / мирный житель
@@ -205,16 +207,29 @@
 Путана / красотка
 Маньяк
 Священник / бессмертный
-Вор</value>
+Вор
+Камикадзе
+Глава мафии / Дон</value>
   </data>
   <data name="RolesOPrefix" xml:space="preserve">
     <value> (или буква не указана)</value>
   </data>
-  <data name="StateText" xml:space="preserve">
-    <value>{0:S} – мёртв
-{1:S} – молчит после маньяка
-{2:S} – роль украдена
-{3:S} – роль раскрыта</value>
+  <data name="StatusesNames" xml:space="preserve">
+    <value>Мёртв
+Без права голоса
+Роль украдена
+Роль раскрыта
+Вылечен / спасён</value>
+  </data>
+  <data name="TimerButton" xml:space="preserve">
+    <value>Таймер</value>
+  </data>
+  <data name="TimerLines" xml:space="preserve">
+    <value>1 минута
+2 минуты
+3 минуты
+4 минуты
+5 минут</value>
   </data>
   <data name="TooMuchPlayersMessage" xml:space="preserve">
     <value>Слишком много игроков в игре. Приложение на данный момент поддерживает не более {0:D} игроков одновременно</value>

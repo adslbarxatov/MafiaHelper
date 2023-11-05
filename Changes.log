@@ -1,6 +1,7 @@
 Mafia helper: changes log
 
 ToDo:
+- Add a lock flag for player to avoid the misapplication of healing abilities;
 - Add mafia boss and kamikaze;
 - Add timer;
 - Add music control;

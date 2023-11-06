@@ -39,10 +39,12 @@ namespace RD_AAOW
 			// Инициализация
 			InitializeComponent ();
 			this.Text = ProgramDescription.AssemblyTitle;
-			RDGenerics.LoadWindowDimensions (this);
-
 			this.CancelButton = BExit;
 			this.AcceptButton = BBegin;
+
+			// Загрузка настроек
+			RDGenerics.LoadWindowDimensions (this);
+			MusicPath.Text = MusicPathProperty;
 
 			LanguageCombo.Items.AddRange (Localization.LanguagesNames);
 			try
@@ -78,6 +80,10 @@ namespace RD_AAOW
 			BExit.Text = Localization.GetDefaultText (LzDefaultTextValues.Button_Exit);
 			AboutButton.Text = Localization.GetDefaultText (LzDefaultTextValues.Control_AppAbout);
 			BBegin.Text = Localization.GetText ("BBegin");
+
+			MainPage.Text = BBegin.Text;
+			SettingsPage.Text = Localization.GetText ("BSettings");
+			MusicPathLabel.Text = FBDialog.Description = Localization.GetText ("MusicPathLabel");
 			}
 
 		// Запрос справки
@@ -94,12 +100,18 @@ namespace RD_AAOW
 
 		private void MafiaHelperForm_FormClosing (object sender, FormClosingEventArgs e)
 			{
+			// Сохранение настроек
+			MusicPathProperty = MusicPath.Text;
 			RDGenerics.SaveWindowDimensions (this);
 			}
 
 		// Начало игры
 		private void BBegin_Click (object sender, EventArgs e)
 			{
+			// Сохранение настроек
+			MusicPathProperty = MusicPath.Text;
+			RDGenerics.SaveWindowDimensions (this);
+
 			// Сворачивание
 			this.Hide ();
 
@@ -114,6 +126,29 @@ namespace RD_AAOW
 			// Восстановление
 			mpf.Dispose ();
 			this.Show ();
+			}
+
+		// Выбор директории с музыкой
+		private void MusicPathButton_Click (object sender, EventArgs e)
+			{
+			FBDialog.SelectedPath = MusicPath.Text;
+			if (FBDialog.ShowDialog () == DialogResult.OK)
+				MusicPath.Text = FBDialog.SelectedPath;
+			}
+
+		/// <summary>
+		/// Возвращает или задаёт директорию с музыкой
+		/// </summary>
+		public static string MusicPathProperty
+			{
+			get
+				{
+				return RDGenerics.GetAppSettingsValue ("MusicPath");
+				}
+			set
+				{
+				RDGenerics.SetAppSettingsValue ("MusicPath", value);
+				}
 			}
 		}
 	}

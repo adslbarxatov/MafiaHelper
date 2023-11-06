@@ -135,6 +135,12 @@ Explode
   <data name="BBegin" xml:space="preserve">
     <value>Begin the game</value>
   </data>
+  <data name="BRules" xml:space="preserve">
+    <value>Game rules</value>
+  </data>
+  <data name="BSettings" xml:space="preserve">
+    <value>Options</value>
+  </data>
   <data name="DayText" xml:space="preserve">
     <value>Day</value>
   </data>
@@ -143,6 +149,9 @@ Explode
   </data>
   <data name="ExecutionResult_Protected" xml:space="preserve">
     <value>player was protected from this action</value>
+  </data>
+  <data name="ExecutionResult_Role" xml:space="preserve">
+    <value>player can’t apply this role to himself</value>
   </data>
   <data name="ExecutionResult_State" xml:space="preserve">
     <value>player’s status doesn’t allow this action</value>
@@ -179,6 +188,12 @@ Leave the game?</value>
   <data name="MusicButton" xml:space="preserve">
     <value>Music</value>
   </data>
+  <data name="MusicPathLabel" xml:space="preserve">
+    <value>Path to the directory with background music:</value>
+  </data>
+  <data name="MusicPreparation" xml:space="preserve">
+    <value>Preparing background music...</value>
+  </data>
   <data name="NightText" xml:space="preserve">
     <value>Night</value>
   </data>
@@ -197,13 +212,13 @@ To the right of the name, separated by a space ([Space] or [Tab] keys), you can 
     <value>Reset actions</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>OMDCBIPTKS</value>
+    <value>OMDIBNPTKS</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Townspeople
 Mafia
 Doctor
-Commissioner / detective
+Detective
 Beauty / prostitute
 Maniac
 Priest / immortal
@@ -239,5 +254,8 @@ Healed / saved</value>
   </data>
   <data name="UnknownRoleMessage" xml:space="preserve">
     <value>The role in line {0:D} is incorrect</value>
+  </data>
+  <data name="WrongRoleMessage" xml:space="preserve">
+    <value>This role can’t be applied to itself</value>
   </data>
 </root>

@@ -33,6 +33,7 @@ namespace RD_AAOW
 
 			BExit.Text = Localization.GetDefaultText (LzDefaultTextValues.Button_Cancel);
 			BBegin.Text = Localization.GetText ("BBegin");
+			BRules.Text = Localization.GetText ("BRules");
 
 			PlayersText.Text = RDGenerics.GetAppSettingsValue ("PlayersList");
 			PlayersLabel.Text = string.Format (Localization.GetText ("PlayersText"), minPlayers);
@@ -66,11 +67,6 @@ namespace RD_AAOW
 			{
 			// Определение числа игроков
 			string[] pl = PlayersText.Text.Split (linesSplitters, StringSplitOptions.RemoveEmptyEntries);
-			/*if (pl.Length < minPlayers)
-				{
-				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughPlayersMessage");
-				return;
-				}*/
 
 			// Счётчики
 			uint[] counters = new uint[rolesAliases.Length];
@@ -109,7 +105,7 @@ namespace RD_AAOW
 				counters[r]++;
 				}
 
-			// Защита
+			// Контроль числа игроков
 			if (players.Count < minPlayers)
 				{
 				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughPlayersMessage");
@@ -125,20 +121,23 @@ namespace RD_AAOW
 				return;
 				}
 
-			// Контроль ролей
-			if ((counters[1] > players.Count / 2) || (counters[1] < 2))
+			// Контроль баланса мафии и жителей
+			uint mafia = counters[(int)MafiaPlayerRoles.Mafia] + counters[(int)MafiaPlayerRoles.MafiaBoss];
+			if ((mafia > players.Count / 2) || (mafia < 2))
 				{
 				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughRolesMessage");
 				players.Clear ();
 				return;
 				}
 
-			if ((players.Count - counters[0] - counters[1]) > (rolesAliases.Length - 2))
-				{
-				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "TooMuchSecondaryRolesMessage");
-				players.Clear ();
-				return;
-				}
+			// Контроль уникальности остальных ролей
+			for (int i = (int)MafiaPlayerRoles.Doctor; i < rolesAliases.Length; i++)
+				if (counters[i] > 1)
+					{
+					RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "TooMuchSecondaryRolesMessage");
+					players.Clear ();
+					return;
+					}
 
 			// Успешно. Сохранение игроков без ролей
 			string s = "";
@@ -160,5 +159,11 @@ namespace RD_AAOW
 				}
 			}
 		private List<MafiaPlayer> players = new List<MafiaPlayer> ();
+
+		// Открытие ссылки на правила игры
+		private void BRules_Click (object sender, EventArgs e)
+			{
+			RDGenerics.RunURL (RDGenerics.AssemblyGitPageLink);
+			}
 		}
 	}

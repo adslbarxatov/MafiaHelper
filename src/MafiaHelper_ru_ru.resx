@@ -135,6 +135,12 @@
   <data name="BBegin" xml:space="preserve">
     <value>Начать игру</value>
   </data>
+  <data name="BRules" xml:space="preserve">
+    <value>Правила игры</value>
+  </data>
+  <data name="BSettings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
   <data name="DayText" xml:space="preserve">
     <value>День</value>
   </data>
@@ -143,6 +149,9 @@
   </data>
   <data name="ExecutionResult_Protected" xml:space="preserve">
     <value>игрок защищён от этого действия</value>
+  </data>
+  <data name="ExecutionResult_Role" xml:space="preserve">
+    <value>игрок не может применить эту роль к себе</value>
   </data>
   <data name="ExecutionResult_State" xml:space="preserve">
     <value>статус игрока не допускает это действие</value>
@@ -179,6 +188,12 @@
   <data name="MusicButton" xml:space="preserve">
     <value>Музыка</value>
   </data>
+  <data name="MusicPathLabel" xml:space="preserve">
+    <value>Путь к директории с фоновой музыкой:</value>
+  </data>
+  <data name="MusicPreparation" xml:space="preserve">
+    <value>Подготовка фоновой музыки...</value>
+  </data>
   <data name="NightText" xml:space="preserve">
     <value>Ночь</value>
   </data>
@@ -197,13 +212,13 @@
     <value>Сбросить действия</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>ОМДКПНСВЗГ</value>
+    <value>ОМДИПНСВЗГ</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Обыватель / мирный житель
 Мафия
 Доктор
-Комиссар / детектив
+Детектив
 Путана / красотка
 Маньяк
 Священник / бессмертный
@@ -239,5 +254,8 @@
   </data>
   <data name="UnknownRoleMessage" xml:space="preserve">
     <value>Роль в строке {0:D} указана неправильно</value>
+  </data>
+  <data name="WrongRoleMessage" xml:space="preserve">
+    <value>Эта роль не может быть применена сама к себе</value>
   </data>
 </root>

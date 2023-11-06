@@ -1,15 +1,20 @@
 Mafia helper: changes log
 
 ToDo:
-- Highlight mafia;
-- Indicate mafia boss as mafia;
-- Exclude commissioner (it's another role);
-- Add music control;
 - Add activity log;
 - Add switches for application rules;
-- Add self-targetting control;
-- Add help buttons everywhere;
-- Mafia boss can reveal the role of commissioner
+- Mafia boss can reveal the role of commissioner (new role)
+
+Version 1.2:
+• Fixed the incorrect naming of the detective role;
+• Fixed the incorrect detecting the mafia boss as not a mafia;
+• Fixed an inability of the doctor to heal himself;
+• Fixed a possibility for beauty to stay with the active role after the thief;
+• Mafia roles are now highlighted;
+• Added the music control: it supports fade effects and random track selection;
+• Added direct links to the text of game rules;
+• Implemented the roles self-application control;
+• Implemented the roles order control
 
 Version 1.1:
 • Healing roles will now be applied by priority (without taking into account chronology).

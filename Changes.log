@@ -3,11 +3,13 @@ Mafia helper: changes log
 ToDo:
 - Highlight mafia;
 - Indicate mafia boss as mafia;
+- Exclude commissioner (it's another role);
 - Add music control;
 - Add activity log;
 - Add switches for application rules;
 - Add self-targetting control;
-- Add help buttons everywhere
+- Add help buttons everywhere;
+- Mafia boss can reveal the role of commissioner
 
 Version 1.1:
 • Healing roles will now be applied by priority (without taking into account chronology).

@@ -1,6 +1,8 @@
 Mafia helper: changes log
 
 ToDo:
+- Fix the inability to play the next track;
+- Add the repeating preventer for music;
 - Add activity log;
 - Add switches for application rules;
 - Mafia boss can reveal the role of commissioner (new role)

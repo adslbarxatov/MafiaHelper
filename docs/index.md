@@ -109,8 +109,9 @@ one player and “execute” him (such a player leaves the game). Has no other p
 in voting and discussion, imitating civilians or other roles. At night, he can choose one player
 to “kill”.
 
-`Doctor` is a civilian. Action at night – saving the specified player from “murder”. Prevents `mafia`
-action regardless of when called by the moderator.
+`Doctor` is a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`
+action).
+*In order for the role to work, it must be one of the first called in the app (along with the `maniac` and `thief`)*.
 
 `Detective` is a civilian. Action at night – finding out the role of the specified player (the moderator
 tells him with signs whether the specified player belongs to the mafia or not). Can use the collected
@@ -118,14 +119,13 @@ information in the day's discussion. The role of the mafia boss cannot be reveal
 give a “civilian” sign).
 
 `Prostitute, beauty` is a conditionally civilian. Action at night – saving the specified player.
-Prevents `mafia` action regardless of when called by the moderator. But, unlike the `doctor`, if a player
-with this role dies, he “takes with him” the player he saved. Since the role “spends the whole night”
-with the person being saved, the “death” of both through the `beauty` is possible at any moment of the night.
+(prevents `mafia` action). But, unlike the `doctor`, if a player
+with this role dies, he “takes with him” the player he saved.
 
 `Maniac` is a conditionally civilian. Action at night – remove a living player from the vote. The victim
-cannot vote for the next day. Also during the current night and the next day, she cannot be killed
-by anyone other than a `kamikaze`. *In order for the role to work, it must be one of the first called
-in the app (along with the `thief`)*.
+cannot vote for the next day. Also during the current night and the next day, victim cannot be killed
+by anyone other than a `kamikaze`.
+*In order for the role to work, it must be one of the first called in the app (along with the `thief` and `doctor`)*.
 
 `Priest, immortal` is civilian. Has no effect. Can be killed only in three cases:
 - when his role is stolen by a `thief`;
@@ -136,9 +136,9 @@ in the app (along with the `thief`)*.
 The victim doesn’t know that her role has been “stolen” and acts as usual. But her actions will not have
 an effect during the current night (the `doctor` and the `beauty` will not be able to save, the `detective`
 will receive the wrong answer from the moderator, the `priest` will lose protection, the `maniac` will not
-change the victim’s condition). *In relation to the `mafia`, the use of the role is controversial, because
-it is represented by several players*. *In order for the role to work, it must be one of the first called
-in the app (along with the `maniac`)*.
+change the victim’s condition).
+*In relation to the `mafia`, the use of the role is controversial, because it is represented by several players*.
+*In order for the role to work, it must be one of the first called in the app (along with the `maniac` and `doctor`)*.
 
 `Kamikaze` is a conditionally civilian. The action during the day is to destroy one player along with
 himself (both players leave the game). Usually has a spontaneous character, that is, it’s a source of randomness
@@ -176,6 +176,8 @@ The ***gaming activity tracking interface*** has the following capabilities:
 - displaying a dynamic context menu when pressing buttons in the “actions” column, which contains only those actions that are currently available;
 - obvious transition between day and night phases with display of actions performed and their results;
 - control of intersecting rules;
-- controlled timer with several preset intervals and audible alarm (60, 10 and 0 seconds);
+- control of timer with several preset intervals and audible alarm (60, 10 and 0 seconds);
+- launch a random music track from the directory specified in the app settings (for night phases);
 - collecting completed actions in a timeline;
+- displaying messages about incorrect application of roles;
 - displaying messages about team win / loss

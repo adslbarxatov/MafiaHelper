@@ -92,6 +92,8 @@ impossible). Victory for ***civilians*** will only be the complete destruction o
 
 <img src="/MafiaHelper/img/07_en.png" />
 
+<img src="/MafiaHelper/img/08_en.png" />
+
 &nbsp;
 
 

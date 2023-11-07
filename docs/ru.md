@@ -96,6 +96,8 @@ MafiaHelper – помощник ведущего для игры «Мафия»
 
 <img src="/MafiaHelper/img/07_ru.png" />
 
+<img src="/MafiaHelper/img/08_ru.png" />
+
 &nbsp;
 
 

@@ -103,38 +103,38 @@ impossible). Victory for ***civilians*** will only be the complete destruction o
 In the current version, each role in the game is associated with one available action. Additionally,
 some roles have certain "abilities".
 
-`Townspeople` - an ordinary resident of the city, the main composition of the game. He always sleeps
+***Townspeople*** – an ordinary resident of the city, the main composition of the game. He always sleeps
 at night. During the day, by voting together with the rest of the “living” players, he can choose
 one player and “execute” him (such a player leaves the game). Has no other possibilities.
 
-`Mafia` is an organized group of players opposing civilians. During the day, he can participate
+***Mafia*** is an organized group of players opposing civilians. During the day, he can participate
 in voting and discussion, imitating civilians or other roles. At night, he can choose one player
 to “kill”.
 
-`Doctor` is a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`
+***Doctor*** – a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`
 action).
 *In order for the role to work, it must be one of the first called in the app (along with the `maniac` and `thief`)*.
 
-`Detective` is a civilian. Action at night – finding out the role of the specified player (the moderator
+***Detective*** – a civilian. Action at night – finding out the role of the specified player (the moderator
 tells him with signs whether the specified player belongs to the mafia or not). Can use the collected
 information in the day's discussion. The role of the mafia boss cannot be revealed (the moderator will
 give a “civilian” sign).
 
-`Prostitute, beauty` is a conditionally civilian. Action at night – saving the specified player.
+***Prostitute / beauty*** – a conditionally civilian. Action at night – saving the specified player.
 (prevents `mafia` action). But, unlike the `doctor`, if a player
 with this role dies, he “takes with him” the player he saved.
 
-`Maniac` is a conditionally civilian. Action at night – remove a living player from the vote. The victim
+***Maniac*** – a conditionally civilian. Action at night – remove a living player from the vote. The victim
 cannot vote for the next day. Also during the current night and the next day, victim cannot be killed
 by anyone other than a `kamikaze`.
 *In order for the role to work, it must be one of the first called in the app (along with the `thief` and `doctor`)*.
 
-`Priest, immortal` is civilian. Has no effect. Can be killed only in three cases:
+***Priest / immortal*** – a civilian. Has no effect. Can be killed only in three cases:
 - when his role is stolen by a `thief`;
 - when he ended up with a `beauty` whom the `mafia` came to;
 - when a `kamikaze` points at him.
 
-`Thief` is a conditionally civilian. The action at night is to “disable the role” of the specified player.
+***Thief*** – a conditionally civilian. The action at night is to “disable the role” of the specified player.
 The victim doesn’t know that her role has been “stolen” and acts as usual. But her actions will not have
 an effect during the current night (the `doctor` and the `beauty` will not be able to save, the `detective`
 will receive the wrong answer from the moderator, the `priest` will lose protection, the `maniac` will not
@@ -142,11 +142,11 @@ change the victim’s condition).
 *In relation to the `mafia`, the use of the role is controversial, because it is represented by several players*.
 *In order for the role to work, it must be one of the first called in the app (along with the `maniac` and `doctor`)*.
 
-`Kamikaze` is a conditionally civilian. The action during the day is to destroy one player along with
+***Kamikaze*** – a conditionally civilian. The action during the day is to destroy one player along with
 himself (both players leave the game). Usually has a spontaneous character, that is, it’s a source of randomness
 in the game. Only victims of a `maniac` are immune.
 
-`Mafia boss` is part of the `mafia`. It doesn’t have a separate action, it plays the role of the `mafia`
+***Mafia boss*** – part of the `mafia`. It doesn’t have a separate action, it plays the role of the `mafia`
 in its composition. Protected from disclosure of the role by the `detective`. Counted as a `mafia` when
 determining the victory of one of the teams.
 

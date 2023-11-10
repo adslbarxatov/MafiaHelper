@@ -150,5 +150,21 @@ namespace RD_AAOW
 				RDGenerics.SetAppSettingsValue ("MusicPath", value);
 				}
 			}
+
+		/// <summary>
+		/// Возвращает или задаёт факт просмотра сообщения о параметрах работы приложения
+		/// </summary>
+		public static bool HardwareRulesHasViewed
+			{
+			get
+				{
+				return hardwareRulesHasViewed;
+				}
+			set
+				{
+				hardwareRulesHasViewed = value;
+				}
+			}
+		private static bool hardwareRulesHasViewed = false;
 		}
 	}

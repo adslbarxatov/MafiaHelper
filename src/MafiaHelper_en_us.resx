@@ -135,6 +135,9 @@ Explode
   <data name="BBegin" xml:space="preserve">
     <value>Begin the game</value>
   </data>
+  <data name="BLog" xml:space="preserve">
+    <value>Log</value>
+  </data>
   <data name="BRules" xml:space="preserve">
     <value>Game rules</value>
   </data>
@@ -143,9 +146,6 @@ Explode
   </data>
   <data name="DayText" xml:space="preserve">
     <value>Day</value>
-  </data>
-  <data name="ExecutionResultTitle" xml:space="preserve">
-    <value>Result of actions:</value>
   </data>
   <data name="ExecutionResult_Protected" xml:space="preserve">
     <value>player was protected from this action</value>
@@ -164,6 +164,18 @@ Explode
 
 Leave the game?</value>
   </data>
+  <data name="HardwareOptions1" xml:space="preserve">
+    <value>The following roles require priority application:</value>
+  </data>
+  <data name="HardwareOptions2" xml:space="preserve">
+    <value>The following roles support self-application:</value>
+  </data>
+  <data name="HardwareOptions3" xml:space="preserve">
+    <value>The following roles belong to mafia:</value>
+  </data>
+  <data name="HardwareOptions4" xml:space="preserve">
+    <value>The following roles are daytime:</value>
+  </data>
   <data name="Header1" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -178,6 +190,15 @@ Leave the game?</value>
   </data>
   <data name="Header5" xml:space="preserve">
     <value>Voices</value>
+  </data>
+  <data name="Log_ActionsResult" xml:space="preserve">
+    <value>Result of actions ({0:S}):</value>
+  </data>
+  <data name="Log_GameStart" xml:space="preserve">
+    <value>Game started with the next configuration:</value>
+  </data>
+  <data name="Log_Interrupted" xml:space="preserve">
+    <value>The game has been cancelled</value>
   </data>
   <data name="MafiaLostMessage" xml:space="preserve">
     <value>Mafia lost!</value>
@@ -209,7 +230,7 @@ Leave the game?</value>
 To the right of the name, separated by a space ([Space] or [Tab] keys), you can specify one of the following roles (one letter of any case):</value>
   </data>
   <data name="ResetText" xml:space="preserve">
-    <value>Reset actions</value>
+    <value>Cancel the last one</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
     <value>OMDIBNPTKS</value>
@@ -240,7 +261,9 @@ Healed / saved</value>
     <value>Timer</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
-    <value>1 minute
+    <value>30 seconds
+1 minute
+90 seconds
 2 minutes
 3 minutes
 4 minutes

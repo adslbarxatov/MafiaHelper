@@ -135,6 +135,9 @@
   <data name="BBegin" xml:space="preserve">
     <value>Начать игру</value>
   </data>
+  <data name="BLog" xml:space="preserve">
+    <value>Журнал</value>
+  </data>
   <data name="BRules" xml:space="preserve">
     <value>Правила игры</value>
   </data>
@@ -143,9 +146,6 @@
   </data>
   <data name="DayText" xml:space="preserve">
     <value>День</value>
-  </data>
-  <data name="ExecutionResultTitle" xml:space="preserve">
-    <value>Результаты действий:</value>
   </data>
   <data name="ExecutionResult_Protected" xml:space="preserve">
     <value>игрок защищён от этого действия</value>
@@ -164,6 +164,18 @@
 
 Покинуть игру?</value>
   </data>
+  <data name="HardwareOptions1" xml:space="preserve">
+    <value>Следующие роли требуют первоочередного применения:</value>
+  </data>
+  <data name="HardwareOptions2" xml:space="preserve">
+    <value>Следующие роли поддерживают применение самих к себе:</value>
+  </data>
+  <data name="HardwareOptions3" xml:space="preserve">
+    <value>Следующие роли относятся к мафии:</value>
+  </data>
+  <data name="HardwareOptions4" xml:space="preserve">
+    <value>Следующие роли являются дневными:</value>
+  </data>
   <data name="Header1" xml:space="preserve">
     <value>Имя</value>
   </data>
@@ -178,6 +190,15 @@
   </data>
   <data name="Header5" xml:space="preserve">
     <value>Голоса</value>
+  </data>
+  <data name="Log_ActionsResult" xml:space="preserve">
+    <value>Результаты действий ({0:S}):</value>
+  </data>
+  <data name="Log_GameStart" xml:space="preserve">
+    <value>Игра запущена со следующей конфигурацией:</value>
+  </data>
+  <data name="Log_Interrupted" xml:space="preserve">
+    <value>Игра была отменена</value>
   </data>
   <data name="MafiaLostMessage" xml:space="preserve">
     <value>Мафия проиграла!</value>
@@ -209,7 +230,7 @@
 Справа от имени через пробел (клавиши [Пробел] или [Tab]) можно указать одну из следующих ролей (одной буквой любого регистра):</value>
   </data>
   <data name="ResetText" xml:space="preserve">
-    <value>Сбросить действия</value>
+    <value>Отменить последнее</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
     <value>ОМДИПНСВЗГ</value>
@@ -240,7 +261,9 @@
     <value>Таймер</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
-    <value>1 минута
+    <value>30 секунд
+1 минута
+90 секунд
 2 минуты
 3 минуты
 4 минуты

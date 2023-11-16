@@ -127,7 +127,9 @@
 —
 Украсть роль
 Взорвать
-—</value>
+—
+Убить преступника
+Выпотрошить</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>Все роли уже используются</value>
@@ -175,6 +177,9 @@
   </data>
   <data name="HardwareOptions4" xml:space="preserve">
     <value>Следующие роли являются дневными:</value>
+  </data>
+  <data name="HardwareOptions5" xml:space="preserve">
+    <value>Следующие роли не имеют собственных действий:</value>
   </data>
   <data name="Header1" xml:space="preserve">
     <value>Имя</value>
@@ -224,16 +229,26 @@
   <data name="NotEnoughRolesMessage" xml:space="preserve">
     <value>В игре слишком мало мирных жителей (менее 50%) или слишком мало мафии (менее 2 игроков)</value>
   </data>
-  <data name="PlayersText" xml:space="preserve">
+  <data name="PlayersStatus" xml:space="preserve">
+    <value>Оставшиеся игроки: {0:D}
+- включая мафию: {1:D}</value>
+  </data>
+  <data name="PlayersText01" xml:space="preserve">
     <value>Для начала укажите имена игроков. Введите не менее {0:D} имён, разделяя их абзацами (клавишей [Enter]).
 
-Справа от имени через пробел (клавиши [Пробел] или [Tab]) можно указать одну из следующих ролей (одной буквой любого регистра):</value>
+Справа от имени через пробел (с помощью клавиш [Пробел] и [Tab] или через контекстное меню) можно указать одну из следующих ролей (одной буквой любого регистра):</value>
+  </data>
+  <data name="PlayersText02" xml:space="preserve">
+    <value>Далее, расположите ночные роли в необходимой последовательности. Обратите внимание, что порядок ролей в первом списке заблокирован и пока не может быть изменён</value>
+  </data>
+  <data name="PlayersTitle" xml:space="preserve">
+    <value>Игроки:</value>
   </data>
   <data name="ResetText" xml:space="preserve">
     <value>Отменить последнее</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>ОМДИПНСВЗГ</value>
+    <value>ОМДИПНСВЗГШТ</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Обыватель / мирный житель
@@ -245,10 +260,15 @@
 Священник / бессмертный
 Вор
 Камикадзе
-Глава мафии / Дон</value>
+Глава мафии / Дон
+Шериф / комиссар
+Потрошитель</value>
   </data>
   <data name="RolesOPrefix" xml:space="preserve">
     <value> (или буква не указана)</value>
+  </data>
+  <data name="RolesTitle" xml:space="preserve">
+    <value>Порядок применения ролей:</value>
   </data>
   <data name="StatusesNames" xml:space="preserve">
     <value>Мёртв

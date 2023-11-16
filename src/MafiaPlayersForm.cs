@@ -15,7 +15,7 @@ namespace RD_AAOW
 		private string rolesAliases;
 		private string[] rolesNames;
 
-		private const uint minPlayers = 6;
+		private const uint minPlayers = 5;
 		private const uint maxPlayers = 20;
 
 		/// <summary>
@@ -34,17 +34,61 @@ namespace RD_AAOW
 			BExit.Text = Localization.GetDefaultText (LzDefaultTextValues.Button_Cancel);
 			BBegin.Text = Localization.GetText ("BBegin");
 			BRules.Text = Localization.GetText ("BRules");
+			RolesTitle.Text = Localization.GetText ("RolesTitle");
+			PlayersTitle.Text = Localization.GetText ("PlayersTitle");
 
 			PlayersText.Text = RDGenerics.GetAppSettingsValue ("PlayersList");
-			PlayersLabel.Text = string.Format (Localization.GetText ("PlayersText"), minPlayers);
+			PlayersLabel.Text = string.Format (Localization.GetText ("PlayersText01"), minPlayers);
 
+			// Загрузка ролей
 			rolesAliases = Localization.GetText ("RolesAliases");
 			rolesNames = Localization.GetText ("RolesNames").Split (linesSplitters,
 				StringSplitOptions.RemoveEmptyEntries);
 
+			PlayersText.ContextMenu = new ContextMenu ();
+			for (int i = 0; i < rolesNames.Length; i++)
+				{
+				PlayersText.ContextMenu.MenuItems.Add (rolesNames[i], AddRole_Click);
+				PlayersText.ContextMenu.MenuItems[i].Tag = i;
+				}
+
+			// Стандартный или сохранённый ранее порядок
+			string rolesOrder = RDGenerics.GetAppSettingsValue ("RolesOrder");
+			List<int> order = new List<int> ();
+
+			string[] v = rolesOrder.Split (rolesSplitters, StringSplitOptions.RemoveEmptyEntries);
+			int count = MafiaRolesOrder.DefaultNightRolesOrder.Length;
+
+			for (int i = 0; i < count; i++)
+				{
+				try
+					{
+					order.Add (int.Parse (v[i]));
+					}
+				catch
+					{
+					order = new List<int> (MafiaRolesOrder.DefaultNightRolesOrder);
+					break;
+					}
+				}
+
+			for (int i = 0; i < order.Count; i++)
+				{
+				MafiaPlayerRoles role = (MafiaPlayerRoles)order[i];
+				string roleLine = rolesAliases[order[i]] + " – " + rolesNames[order[i]].ToLower ();
+
+				if (MafiaPlayer.RoleShouldBeAppliedFirst (role))
+					RolesFirstOrder.Items.Add (roleLine);
+				else
+					RolesSecondOrder.Items.Add (roleLine);
+				}
+
+			// Формирование комментария
 			for (int i = 0; i < rolesNames.Length; i++)
 				PlayersLabel.Text += (Localization.RN + "• " + rolesAliases[i] +
 					(i == 0 ? Localization.GetText ("RolesOPrefix") : "") + " – " + rolesNames[i].ToLower ());
+
+			PlayersLabel.Text += Localization.RNRN + Localization.GetText ("PlayersText02");
 
 			// Запуск
 			this.ShowDialog ();
@@ -123,7 +167,7 @@ namespace RD_AAOW
 
 			// Контроль баланса мафии и жителей
 			uint mafia = counters[(int)MafiaPlayerRoles.Mafia] + counters[(int)MafiaPlayerRoles.MafiaBoss];
-			if ((mafia > players.Count / 2) || (mafia < 2))
+			if ((mafia > players.Count / 2) || (mafia < 1))
 				{
 				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughRolesMessage");
 				players.Clear ();
@@ -145,6 +189,25 @@ namespace RD_AAOW
 				s += (players[i].Name + rolesSplitters[0].ToString () + Localization.RN);
 			RDGenerics.SetAppSettingsValue ("PlayersList", s);
 
+			// Сохранение порядка применения ролей
+			s = "";
+			List<int> order = new List<int> ();
+			for (int i = 0; i < RolesFirstOrder.Items.Count; i++)
+				{
+				int n = rolesAliases.IndexOf (RolesFirstOrder.Items[i].ToString ().Substring (0, 1));
+				order.Add (n);
+				s += (n.ToString () + rolesSplitters[0].ToString ());
+				}
+			for (int i = 0; i < RolesSecondOrder.Items.Count; i++)
+				{
+				int n = rolesAliases.IndexOf (RolesSecondOrder.Items[i].ToString ().Substring (0, 1));
+				order.Add (n);
+				s += (n.ToString () + rolesSplitters[0].ToString ());
+				}
+
+			RDGenerics.SetAppSettingsValue ("RolesOrder", s);
+			playersRolesOrder = new MafiaRolesOrder (order.ToArray ());
+
 			this.Close ();
 			}
 
@@ -160,10 +223,57 @@ namespace RD_AAOW
 			}
 		private List<MafiaPlayer> players = new List<MafiaPlayer> ();
 
+		/// <summary>
+		/// Возвращает обработчик порядка применения ролей
+		/// </summary>
+		public MafiaRolesOrder PlayersRolesOrder
+			{
+			get
+				{
+				return playersRolesOrder;
+				}
+			}
+		private MafiaRolesOrder playersRolesOrder;
+
 		// Открытие ссылки на правила игры
 		private void BRules_Click (object sender, EventArgs e)
 			{
 			RDGenerics.RunURL (RDGenerics.AssemblyGitPageLink);
+			}
+
+		// Добавление роли
+		private void AddRole_Click (object sender, EventArgs e)
+			{
+			PlayersText.Text = PlayersText.Text.Insert (PlayersText.SelectionStart, rolesSplitters[1].ToString () +
+				rolesAliases[(int)((MenuItem)sender).Tag].ToString ());
+			}
+
+		// Сортировка ролей
+		private void RolesOrderUp_Click (object sender, EventArgs e)
+			{
+			int i = RolesSecondOrder.SelectedIndex;
+			bool up = ((Button)sender).Name.Contains ("Up");
+
+			if (up && (i <= 0) ||
+				!up && ((i < 0) || (i + 1 >= RolesSecondOrder.Items.Count)))
+				return;
+
+			string s = RolesSecondOrder.SelectedItem.ToString ();
+			RolesSecondOrder.Items.RemoveAt (i);
+			RolesSecondOrder.Items.Insert (up ? (i - 1) : (i + 1), s);
+			RolesSecondOrder.SelectedIndex = up ? (i - 1) : (i + 1);
+			}
+
+		// Расчёт числа введённых игроков
+		private void PlayersText_TextChanged (object sender, EventArgs e)
+			{
+			int count = PlayersText.Text.Length - PlayersText.Text.Replace (Localization.RN, "").Length;
+			count /= 2;
+
+			if (!string.IsNullOrWhiteSpace (PlayersText.Text) && !PlayersText.Text.EndsWith (Localization.RN))
+				count++;
+
+			PlayersTitle.Text = Localization.GetText ("PlayersTitle") + " " + count.ToString ();
 			}
 		}
 	}

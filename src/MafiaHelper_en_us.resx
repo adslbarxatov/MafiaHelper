@@ -127,7 +127,9 @@ Mute
 —
 Steal the role
 Explode
-—</value>
+—
+Kill the criminal
+Rip apart</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>All roles are already in use</value>
@@ -176,6 +178,9 @@ Leave the game?</value>
   <data name="HardwareOptions4" xml:space="preserve">
     <value>The following roles are daytime:</value>
   </data>
+  <data name="HardwareOptions5" xml:space="preserve">
+    <value>The following roles have no own actions:</value>
+  </data>
   <data name="Header1" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -189,7 +194,7 @@ Leave the game?</value>
     <value>Action</value>
   </data>
   <data name="Header5" xml:space="preserve">
-    <value>Voices</value>
+    <value>Votes</value>
   </data>
   <data name="Log_ActionsResult" xml:space="preserve">
     <value>Result of actions ({0:S}):</value>
@@ -224,16 +229,26 @@ Leave the game?</value>
   <data name="NotEnoughRolesMessage" xml:space="preserve">
     <value>There are too few townspeople (less than 50%) or too few mafia (less than 2 players) in the game</value>
   </data>
-  <data name="PlayersText" xml:space="preserve">
+  <data name="PlayersStatus" xml:space="preserve">
+    <value>Remaining players: {0:D}
+- including mafia: {1:D}</value>
+  </data>
+  <data name="PlayersText01" xml:space="preserve">
     <value>First, enter names of players. Enter at least {0:D} names, separated by paragraphs ([Enter] key).
 
-To the right of the name, separated by a space ([Space] or [Tab] keys), you can specify one of the following roles (one letter of any case):</value>
+To the right of the name, separated by a space (using [Space] and [Tab] keys or the context menu), you can specify one of the following roles (one letter of any case):</value>
+  </data>
+  <data name="PlayersText02" xml:space="preserve">
+    <value>Second, arrange the night roles in needed sequence. Please note that the order of roles in the first list is locked and cannot be changed yet</value>
+  </data>
+  <data name="PlayersTitle" xml:space="preserve">
+    <value>Players:</value>
   </data>
   <data name="ResetText" xml:space="preserve">
     <value>Cancel the last one</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>OMDIBNPTKS</value>
+    <value>OMDIBNPTKSFR</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Townspeople
@@ -245,10 +260,15 @@ Maniac
 Priest / immortal
 Thief
 Kamikaze
-Boss of mafia / Don</value>
+Boss of mafia / Don
+Sheriff / commissioner
+Ripper</value>
   </data>
   <data name="RolesOPrefix" xml:space="preserve">
     <value> (or letter isn’t specified)</value>
+  </data>
+  <data name="RolesTitle" xml:space="preserve">
+    <value>Application order of night roles:</value>
   </data>
   <data name="StatusesNames" xml:space="preserve">
     <value>Dead

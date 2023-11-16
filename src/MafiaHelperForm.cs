@@ -119,7 +119,7 @@ namespace RD_AAOW
 			MafiaPlayersForm mpf = new MafiaPlayersForm ();
 			if (mpf.Players.Count > 0)
 				{
-				MafiaGameForm mgf = new MafiaGameForm (mpf.Players);
+				MafiaGameForm mgf = new MafiaGameForm (mpf.Players, mpf.PlayersRolesOrder);
 				mgf.Dispose ();
 				}
 

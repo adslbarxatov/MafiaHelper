@@ -1,17 +1,19 @@
 Mafia helper: changes log
 
 ToDo:
-- Add descending counter for the rest of voices;
-- Add the message for timer ending;
-- Add an offline help;
 - Add yakuza + yakuza boss (concurring equivalent of mafia);
-- Add judge (protection from voting);
-- Rename: потрошитель - путана - шериф = ПШФ;
-- Ripper should trigger immortal through the beauty (as well as mafia);
-- Townspeople should be able to kill the immortal;
-- Maniac doesn't give any immunity;
-- Ripper can't kill mafia???
 - Implement the delayed roles entry (all except for mafia, sheriff, detective and doctor)
+
+Version 1.5:
+• Added the judge role (can protect somebody from execution voting);
+• Added an offline help text;
+• Added the ability to enable / disable the times sounds and the timeout message;
+• Added the popup message about available voices during the vote;
+• Removed protection for muted players (rules update);
+• Ripper can now kill the player healed by beauty (rules update);
+• Maniac is now an orderable role (rules update);
+• Townspeople can now execute everybody (rules update);
+• Muted players can now play their roles at night (rules update)
 
 Version 1.4:
 • Implemented the roles application order;

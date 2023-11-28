@@ -129,7 +129,8 @@
 Взорвать
 —
 Убить преступника
-Выпотрошить</value>
+Выпотрошить
+Защитить</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>Все роли уже используются</value>
@@ -248,21 +249,22 @@
     <value>Отменить последнее</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>ОМДИПНСВЗГШТ</value>
+    <value>ОМДИБНСВЗГШПУ</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Обыватель / мирный житель
 Мафия
 Доктор
 Детектив
-Путана / красотка
+Блудница / красотка
 Маньяк
 Священник / бессмертный
 Вор
 Камикадзе
 Глава мафии / Дон
 Шериф / комиссар
-Потрошитель</value>
+Потрошитель
+Судья</value>
   </data>
   <data name="RolesOPrefix" xml:space="preserve">
     <value> (или буква не указана)</value>
@@ -275,10 +277,17 @@
 Без права голоса
 Роль украдена
 Роль раскрыта
-Вылечен / спасён</value>
+Вылечен / спасён
+Защищён</value>
+  </data>
+  <data name="TimeoutMessage" xml:space="preserve">
+    <value>Время истекло</value>
   </data>
   <data name="TimerButton" xml:space="preserve">
     <value>Таймер</value>
+  </data>
+  <data name="TimerEndMessage" xml:space="preserve">
+    <value>Сообщение об истечении времени</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
     <value>30 секунд
@@ -289,6 +298,12 @@
 4 минуты
 5 минут</value>
   </data>
+  <data name="TimerSettingsLabel" xml:space="preserve">
+    <value>Настройки таймера:</value>
+  </data>
+  <data name="TimerSound" xml:space="preserve">
+    <value>Звуки таймера (60, 10 и 0 секунд)</value>
+  </data>
   <data name="TooMuchPlayersMessage" xml:space="preserve">
     <value>Слишком много игроков в игре. Приложение на данный момент поддерживает не более {0:D} игроков одновременно</value>
   </data>
@@ -297,6 +312,9 @@
   </data>
   <data name="UnknownRoleMessage" xml:space="preserve">
     <value>Роль в строке {0:D} указана неправильно</value>
+  </data>
+  <data name="VoicesLeftMessage" xml:space="preserve">
+    <value>Оставшиеся голоса: </value>
   </data>
   <data name="WrongRoleMessage" xml:space="preserve">
     <value>Эта роль не может быть применена сама к себе</value>

@@ -129,7 +129,8 @@ Steal the role
 Explode
 —
 Kill the criminal
-Rip apart</value>
+Rip apart
+Protect</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>All roles are already in use</value>
@@ -248,7 +249,7 @@ To the right of the name, separated by a space (using [Space] and [Tab] keys or 
     <value>Cancel the last one</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>OMDIBNPTKSFR</value>
+    <value>OMDIBNPTKSFRJ</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Townspeople
@@ -262,7 +263,8 @@ Thief
 Kamikaze
 Boss of mafia / Don
 Sheriff / commissioner
-Ripper</value>
+Ripper
+Judge</value>
   </data>
   <data name="RolesOPrefix" xml:space="preserve">
     <value> (or letter isn’t specified)</value>
@@ -275,10 +277,17 @@ Ripper</value>
 Muted
 Role is stolen
 Role is revealed
-Healed / saved</value>
+Healed / saved
+Protected</value>
+  </data>
+  <data name="TimeoutMessage" xml:space="preserve">
+    <value>Time is up</value>
   </data>
   <data name="TimerButton" xml:space="preserve">
     <value>Timer</value>
+  </data>
+  <data name="TimerEndMessage" xml:space="preserve">
+    <value>Time-out message</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
     <value>30 seconds
@@ -289,6 +298,12 @@ Healed / saved</value>
 4 minutes
 5 minutes</value>
   </data>
+  <data name="TimerSettingsLabel" xml:space="preserve">
+    <value>Timer settings:</value>
+  </data>
+  <data name="TimerSound" xml:space="preserve">
+    <value>Times sounds (60, 10 and 0 seconds)</value>
+  </data>
   <data name="TooMuchPlayersMessage" xml:space="preserve">
     <value>Too much players in the game. The app now supports not more than {0:D} players at a time</value>
   </data>
@@ -297,6 +312,9 @@ Healed / saved</value>
   </data>
   <data name="UnknownRoleMessage" xml:space="preserve">
     <value>The role in line {0:D} is incorrect</value>
+  </data>
+  <data name="VoicesLeftMessage" xml:space="preserve">
+    <value>Voices left: </value>
   </data>
   <data name="WrongRoleMessage" xml:space="preserve">
     <value>This role can’t be applied to itself</value>

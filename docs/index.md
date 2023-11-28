@@ -1,5 +1,5 @@
 # Mafia helper: user guide
-> **ƒ** &nbsp;RD AAOW FDL; 19.11.2023; 16:01
+> **ƒ** &nbsp;RD AAOW FDL; 29.11.2023; 2:05
 
 
 
@@ -24,7 +24,7 @@ of the game.
 in the current version of the application. They may not comply with official competition requirements
 and may be changed or supplemented in new versions of the product.***
 
-> Current version of the guide: MafiaHelper v 1.4
+> Current version of the guide: MafiaHelper v 1.5
 
 &nbsp;
 
@@ -50,7 +50,7 @@ into the application.
 <img src="/MafiaHelper/img/02_en.png" />
 
 Then a ***zero day*** is announced (the app is not used), during which players implement representative
-functions related to the game process. The players see each other, which requires each of them to carefully
+functions related to the game process. The players see each other. This requires each of them to carefully
 simulate the absence of any special role.
 
 > The essence of the gameplay is the confrontation between civilians and the mafia. Each team strives
@@ -61,7 +61,7 @@ simulate the absence of any special role.
 
 The ***first night*** is announced (players close their eyes). The presenter takes turns interviewing
 the roles (except for `townspeople`). The respective players open their eyes and point to some other
-player (in some cases you can point to themselves or skip a turn) to whom they want to apply the action
+player (in some cases you can point to them or skip a turn) to whom they want to apply the action
 of their role. The moderator makes appropriate notes in the app. Having completed the role, the player
 closes his eyes.
 
@@ -101,7 +101,7 @@ impossible). Victory for ***civilians*** will only be the complete destruction o
 ### Implemented roles
 
 In the current version, each role in the game is associated with one available action. Additionally,
-some roles have certain "abilities".
+some roles have certain “abilities”.
 
 ***Townspeople*** – an ordinary resident of the city, the main composition of the game. He always sleeps
 at night, therefore doesn’t know the roles of other players.
@@ -114,7 +114,7 @@ to “kill”.
 
 ***Doctor*** – a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`,
 `sheriff` and `ripper` action).
-*In order for the role to work, it is one of the first called in the app (along with the `maniac` and `thief`)*.
+*In order for the role to work, it is one of the first called in the app (along with the `thief`)*.
 
 ***Detective*** – a civilian. Action at night – finding out the role of the specified player (the moderator
 tells him with signs whether the specified player belongs to the mafia or not). He can use the collected
@@ -123,16 +123,14 @@ give a “civilian” sign).
 
 ***Prostitute / beauty*** – a conditionally civilian. Action at night – saving the specified player
 (prevents `mafia`, `sheriff` and `ripper` action). But, unlike the `doctor`, if a player
-with this role dies, he “takes with him” the player he saved.
+with this role dies (killed by `mafia` or `ripper`), he “takes with him” the player he saved.
 
 ***Maniac*** – a conditionally civilian. Action at night – remove a living player from the vote. The victim
-cannot vote for the next day. Also during the current night and the next day, victim cannot be killed
-by anyone other than a `kamikaze`.
-*In order for the role to work, it is one of the first called in the app (along with the `thief` and `doctor`)*.
+cannot vote for the next day.
 
 ***Priest / immortal*** – a civilian. Has no effect. Can be killed only in three cases:
 - when his role is stolen by a `thief`;
-- when he ended up with a `beauty` whom the `mafia` came to;
+- when he ended up with a `beauty` whom the `mafia` or `ripper` came to;
 - when a `kamikaze` points at him.
 
 ***Thief*** – a conditionally civilian. The action at night is to “disable the role” of the specified player.
@@ -141,20 +139,23 @@ an effect during the current night (the `doctor` and the `beauty` will not be ab
 will receive the wrong answer from the moderator, the `priest` will lose protection, the `maniac` will not
 change the victim’s condition).
 *In relation to the `mafia`, the use of the role is controversial, because it is represented by several players*.
-*In order for the role to work, it is one of the first called in the app (along with the `maniac` and `doctor`)*.
+*In order for the role to work, it is one of the first called in the app (along with the `doctor`)*.
 
 ***Kamikaze*** – a conditionally civilian. The action during the day is to destroy one player along with
 himself (both players leave the game). Usually has a spontaneous character, that is, it’s a source of randomness
-in the game. Only victims of a `maniac` are immune.
+in the game.
 
 ***Mafia boss*** – part of the `mafia`. He doesn’t have a separate action; he plays the role of the `mafia`
 in composition. Boss is protected from disclosure of the role by the `detective`. He is counted as a `mafia` when
 determining the victory of one of teams.
 
-***Sheriff*** – a civilian. Action at night - killing mafia members. If he “hits” civilians, his role doesn’t work.
+***Sheriff*** – a civilian. Action at night – killing mafia members. If he “hits” civilians, his role doesn’t work.
 
 ***Ripper*** – a conditionally civilian. The action at night is to destroy one player (unlike the `kamikaze`,
 he himself doesn’t leave the game). He also has a spontaneous character, that is, it’s a source of randomness in the game.
+
+***Judge*** – a civilian. The action at night is to protect one player from execution. The next voting
+will take no effect on the protected player.
 
 &nbsp;
 

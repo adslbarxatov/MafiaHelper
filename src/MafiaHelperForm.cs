@@ -44,7 +44,9 @@ namespace RD_AAOW
 
 			// Загрузка настроек
 			RDGenerics.LoadWindowDimensions (this);
-			MusicPath.Text = MusicPathProperty;
+			MusicPath.Text = MafiaSettings.MusicPath;
+			TimerEndMessage.Checked = MafiaSettings.TimerMessage;
+			TimerSound.Checked = MafiaSettings.TimerSounds;
 
 			LanguageCombo.Items.AddRange (Localization.LanguagesNames);
 			try
@@ -84,6 +86,10 @@ namespace RD_AAOW
 			MainPage.Text = BBegin.Text;
 			SettingsPage.Text = Localization.GetText ("BSettings");
 			MusicPathLabel.Text = FBDialog.Description = Localization.GetText ("MusicPathLabel");
+
+			TimerSettingsLabel.Text = Localization.GetText ("TimerSettingsLabel");
+			TimerEndMessage.Text = Localization.GetText ("TimerEndMessage");
+			TimerSound.Text = Localization.GetText ("TimerSound");
 			}
 
 		// Запрос справки
@@ -101,7 +107,7 @@ namespace RD_AAOW
 		private void MafiaHelperForm_FormClosing (object sender, FormClosingEventArgs e)
 			{
 			// Сохранение настроек
-			MusicPathProperty = MusicPath.Text;
+			SaveSettings ();
 			RDGenerics.SaveWindowDimensions (this);
 			}
 
@@ -109,7 +115,7 @@ namespace RD_AAOW
 		private void BBegin_Click (object sender, EventArgs e)
 			{
 			// Сохранение настроек
-			MusicPathProperty = MusicPath.Text;
+			SaveSettings ();
 			RDGenerics.SaveWindowDimensions (this);
 
 			// Сворачивание
@@ -128,6 +134,14 @@ namespace RD_AAOW
 			this.Show ();
 			}
 
+		// Сохранение настроек
+		private void SaveSettings ()
+			{
+			MafiaSettings.MusicPath = MusicPath.Text;
+			MafiaSettings.TimerSounds = TimerSound.Checked;
+			MafiaSettings.TimerMessage = TimerEndMessage.Checked;
+			}
+
 		// Выбор директории с музыкой
 		private void MusicPathButton_Click (object sender, EventArgs e)
 			{
@@ -135,36 +149,5 @@ namespace RD_AAOW
 			if (FBDialog.ShowDialog () == DialogResult.OK)
 				MusicPath.Text = FBDialog.SelectedPath;
 			}
-
-		/// <summary>
-		/// Возвращает или задаёт директорию с музыкой
-		/// </summary>
-		public static string MusicPathProperty
-			{
-			get
-				{
-				return RDGenerics.GetAppSettingsValue ("MusicPath");
-				}
-			set
-				{
-				RDGenerics.SetAppSettingsValue ("MusicPath", value);
-				}
-			}
-
-		/// <summary>
-		/// Возвращает или задаёт факт просмотра сообщения о параметрах работы приложения
-		/// </summary>
-		public static bool HardwareRulesHasViewed
-			{
-			get
-				{
-				return hardwareRulesHasViewed;
-				}
-			set
-				{
-				hardwareRulesHasViewed = value;
-				}
-			}
-		private static bool hardwareRulesHasViewed = false;
 		}
 	}

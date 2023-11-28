@@ -238,7 +238,8 @@ namespace RD_AAOW
 		// Открытие ссылки на правила игры
 		private void BRules_Click (object sender, EventArgs e)
 			{
-			RDGenerics.RunURL (RDGenerics.AssemblyGitPageLink);
+			/*RDGenerics.RunURL (RDGenerics.AssemblyGitPageLink);*/
+			RDGenerics.ShowAbout (false);
 			}
 
 		// Добавление роли

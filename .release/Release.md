@@ -1,10 +1,6 @@
-_Changes for v 1.5_:
-- Added the `judge` role (can protect somebody from execution voting);
-- Added an offline help text;
-- Added the ability to enable / disable the timer sounds and the timeout message;
-- Added the popup message about available voices during the vote;
-- Removed protection for muted players (rules update);
-- Ripper can now kill the player healed by beauty (rules update);
-- Maniac is now an orderable role (rules update);
-- Townspeople can now execute everybody (rules update);
-- Muted players can now play their roles at night (rules update)
+_Changes for v 1.6_:
+- Implemented the ability to delay all non-default roles (except for mafia, sheriff, detective, doctor and townspeople) for the specified amount of nights;
+- For the Microsoft Store installation the game log has been moved to the desktop;
+- Added a simple horn sound (available from the timer button);
+- The detective will turn into sheriff if the sheriff dies first;
+- Added the `judge` role (can protect somebody from execution voting)

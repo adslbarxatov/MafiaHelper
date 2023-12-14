@@ -1,11 +1,14 @@
 Mafia helper: changes log
 
 ToDo:
-- Add yakuza + yakuza boss (concurring equivalent of mafia);
-- Implement the delayed roles entry (all except for mafia, sheriff, detective and doctor)
-- Add a simple horn button;
-- Exclude the roles description;
-- If sheriff dies before the detective, he should take the sheriff role
+- Add yakuza + yakuza boss (concurring equivalent of mafia)
+
+Version 1.6:
+• Implemented the ability to delay all non-default roles (except for mafia, sheriff, detective,
+  doctor and townspeople) for the specified amount of nights;
+• For the Microsoft Store installation the game log has been moved to the desktop;
+• Added a simple horn sound (available from the timer button);
+• The detective will turn into sheriff if the sheriff dies first
 
 Version 1.5:
 • Added the judge role (can protect somebody from execution voting);

@@ -23,6 +23,16 @@
 		SuccessSelfToo = 2,
 
 		/// <summary>
+		/// Успешно; детектив должен стать шерифом
+		/// </summary>
+		SuccessTurnIntoSheriff = 3,
+
+		/// <summary>
+		/// Успешно; детектив должен стать шерифом (вариант для камикадзе)
+		/// </summary>
+		SuccessTurnIntoSheriffSelfToo = 4,
+
+		/// <summary>
 		/// Неуспешно: неприменимо для этой роли игрока
 		/// </summary>
 		FailIncorrectRole = -1,

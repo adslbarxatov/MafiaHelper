@@ -224,6 +224,9 @@ Leave the game?</value>
   <data name="NightText" xml:space="preserve">
     <value>Night</value>
   </data>
+  <data name="NonDefaultRolesLabel" xml:space="preserve">
+    <value>The night on which non-default roles begin:</value>
+  </data>
   <data name="NotEnoughPlayersMessage" xml:space="preserve">
     <value>Not enough players in the game</value>
   </data>
@@ -290,7 +293,8 @@ Protected</value>
     <value>Time-out message</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
-    <value>30 seconds
+    <value>Horn
+30 seconds
 1 minute
 90 seconds
 2 minutes

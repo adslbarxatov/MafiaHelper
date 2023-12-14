@@ -1,5 +1,5 @@
 # Mafia helper: user guide
-> **ƒ** &nbsp;RD AAOW FDL; 29.11.2023; 2:05
+> **ƒ** &nbsp;RD AAOW FDL; 15.12.2023; 2:15
 
 
 
@@ -24,7 +24,7 @@ of the game.
 in the current version of the application. They may not comply with official competition requirements
 and may be changed or supplemented in new versions of the product.***
 
-> Current version of the guide: MafiaHelper v 1.5
+> Current version of the guide: MafiaHelper v 1.6
 
 &nbsp;
 
@@ -107,19 +107,21 @@ some roles have certain “abilities”.
 at night, therefore doesn’t know the roles of other players.
 During the day, by voting together with the rest of the “living” players, he can choose
 one player and “execute” him (such a player leaves the game). He has no other possibilities.
+*Available on all days*.
 
 ***Mafia*** is an organized group of players opposing civilians. During the day, he can participate
 in voting and discussion, imitating civilians or other roles. At night, he can choose one player
-to “kill”.
+to “kill”. *Available on all nights*.
 
 ***Doctor*** – a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`,
 `sheriff` and `ripper` action).
 *In order for the role to work, it is one of the first called in the app (along with the `thief`)*.
+*Available on all nights*.
 
 ***Detective*** – a civilian. Action at night – finding out the role of the specified player (the moderator
 tells him with signs whether the specified player belongs to the mafia or not). He can use the collected
 information in the day’s discussion. The role of the mafia boss cannot be revealed (the moderator will
-give a “civilian” sign).
+give a “civilian” sign). *Available on all nights*.
 
 ***Prostitute / beauty*** – a conditionally civilian. Action at night – saving the specified player
 (prevents `mafia`, `sheriff` and `ripper` action). But, unlike the `doctor`, if a player
@@ -150,6 +152,7 @@ in composition. Boss is protected from disclosure of the role by the `detective`
 determining the victory of one of teams.
 
 ***Sheriff*** – a civilian. Action at night – killing mafia members. If he “hits” civilians, his role doesn’t work.
+*Available on all nights*.
 
 ***Ripper*** – a conditionally civilian. The action at night is to destroy one player (unlike the `kamikaze`,
 he himself doesn’t leave the game). He also has a spontaneous character, that is, it’s a source of randomness in the game.
@@ -173,7 +176,8 @@ The following are allowed in the game:
 The ***initial application interface*** allows you to:
 - select the interface language;
 - configure app settings;
-- specify the directory with background music;
+- set the number of the first night when non-default roles (other than `townspeople`, `mafia`, `detective`, `doctor` and `sheriff`) become playable;
+- specify the directory with the background music;
 - access a full range of app and Lab help and support resources.
 
 The ***interface for entering names and roles of players*** performs:

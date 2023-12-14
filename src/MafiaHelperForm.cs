@@ -32,6 +32,17 @@ namespace RD_AAOW
 			}
 
 		/// <summary>
+		/// Возвращает путь к звуку отдельного гудка
+		/// </summary>
+		public static string LongTone
+			{
+			get
+				{
+				return RDGenerics.AppStartupPath + "Long.mp3";
+				}
+			}
+
+		/// <summary>
 		/// Конструктор. Запускает главную форму
 		/// </summary>
 		public MafiaHelperForm ()
@@ -47,6 +58,11 @@ namespace RD_AAOW
 			MusicPath.Text = MafiaSettings.MusicPath;
 			TimerEndMessage.Checked = MafiaSettings.TimerMessage;
 			TimerSound.Checked = MafiaSettings.TimerSounds;
+			try
+				{
+				NonDefaultRolesNight.Value = MafiaSettings.NonDefaultRolesNight;
+				}
+			catch { }
 
 			LanguageCombo.Items.AddRange (Localization.LanguagesNames);
 			try
@@ -65,6 +81,8 @@ namespace RD_AAOW
 					File.WriteAllBytes (EndTone, Properties.MafiaHelper.EndTone);
 				if (!File.Exists (MidTone))
 					File.WriteAllBytes (MidTone, Properties.MafiaHelper.MidTone);
+				if (!File.Exists (LongTone))
+					File.WriteAllBytes (LongTone, Properties.MafiaHelper.LongTone);
 				}
 			catch
 				{
@@ -90,6 +108,8 @@ namespace RD_AAOW
 			TimerSettingsLabel.Text = Localization.GetText ("TimerSettingsLabel");
 			TimerEndMessage.Text = Localization.GetText ("TimerEndMessage");
 			TimerSound.Text = Localization.GetText ("TimerSound");
+
+			NonDefaultRolesLabel.Text = Localization.GetText ("NonDefaultRolesLabel");
 			}
 
 		// Запрос справки
@@ -140,6 +160,7 @@ namespace RD_AAOW
 			MafiaSettings.MusicPath = MusicPath.Text;
 			MafiaSettings.TimerSounds = TimerSound.Checked;
 			MafiaSettings.TimerMessage = TimerEndMessage.Checked;
+			MafiaSettings.NonDefaultRolesNight = (uint)NonDefaultRolesNight.Value;
 			}
 
 		// Выбор директории с музыкой

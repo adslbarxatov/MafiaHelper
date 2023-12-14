@@ -120,7 +120,6 @@
 			switch (Role)
 				{
 				case MafiaPlayerRoles.Thief:
-				/*case MafiaPlayerRoles.Maniac:*/
 				case MafiaPlayerRoles.Doctor:
 					return true;
 
@@ -288,6 +287,15 @@
 		public void Protect ()
 			{
 			isprotected = true;
+			}
+
+		/// <summary>
+		/// Метод переводит игрока в роль шерифа при определённых условиях
+		/// </summary>
+		public void TurnIntoSheriff ()
+			{
+			if (alive && (role == MafiaPlayerRoles.Detective))
+				role = MafiaPlayerRoles.Sheriff;
 			}
 
 		/// <summary>

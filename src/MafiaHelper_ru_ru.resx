@@ -224,6 +224,9 @@
   <data name="NightText" xml:space="preserve">
     <value>Ночь</value>
   </data>
+  <data name="NonDefaultRolesLabel" xml:space="preserve">
+    <value>Ночь, с которой начинаются неосновные роли:</value>
+  </data>
   <data name="NotEnoughPlayersMessage" xml:space="preserve">
     <value>В игре недостаточно участников</value>
   </data>
@@ -290,7 +293,8 @@
     <value>Сообщение об истечении времени</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
-    <value>30 секунд
+    <value>Гудок
+30 секунд
 1 минута
 90 секунд
 2 минуты

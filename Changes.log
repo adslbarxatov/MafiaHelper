@@ -3,6 +3,9 @@ Mafia helper: changes log
 ToDo:
 - Add yakuza + yakuza boss (concurring equivalent of mafia)
 - Add auto-scrollable log viewer
+- Set the upper limit to 30
+- Add the action skipping
+- Add an indicator of the role delay timeout
 
 Version 1.6:
 • Implemented the ability to delay all non-default roles (except for mafia, sheriff, detective,

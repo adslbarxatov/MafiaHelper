@@ -130,7 +130,12 @@ Explode
 —
 Kill the criminal
 Rip apart
-Protect</value>
+Protect
+Kill
+—</value>
+  </data>
+  <data name="Action_Skip" xml:space="preserve">
+    <value>Skip the role</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>All roles are already in use</value>
@@ -156,6 +161,9 @@ Protect</value>
   <data name="ExecutionResult_Role" xml:space="preserve">
     <value>player can’t apply this role to himself</value>
   </data>
+  <data name="ExecutionResult_Skipped" xml:space="preserve">
+    <value>role has been skipped</value>
+  </data>
   <data name="ExecutionResult_State" xml:space="preserve">
     <value>player’s status doesn’t allow this action</value>
   </data>
@@ -166,21 +174,6 @@ Protect</value>
     <value>After exit, the game will be restored to its initial state, and roles will need to be reassigned.
 
 Leave the game?</value>
-  </data>
-  <data name="HardwareOptions1" xml:space="preserve">
-    <value>The following roles require priority application:</value>
-  </data>
-  <data name="HardwareOptions2" xml:space="preserve">
-    <value>The following roles support self-application:</value>
-  </data>
-  <data name="HardwareOptions3" xml:space="preserve">
-    <value>The following roles belong to mafia:</value>
-  </data>
-  <data name="HardwareOptions4" xml:space="preserve">
-    <value>The following roles are daytime:</value>
-  </data>
-  <data name="HardwareOptions5" xml:space="preserve">
-    <value>The following roles have no own actions:</value>
   </data>
   <data name="Header1" xml:space="preserve">
     <value>Name</value>
@@ -204,10 +197,10 @@ Leave the game?</value>
     <value>Game started with the next configuration:</value>
   </data>
   <data name="Log_Interrupted" xml:space="preserve">
-    <value>The game has been cancelled</value>
+    <value>The game has been cancelled!</value>
   </data>
   <data name="MafiaLostMessage" xml:space="preserve">
-    <value>Mafia lost!</value>
+    <value>Townspeople win!</value>
   </data>
   <data name="MafiaWonMessage" xml:space="preserve">
     <value>Mafia won!</value>
@@ -227,6 +220,9 @@ Leave the game?</value>
   <data name="NonDefaultRolesLabel" xml:space="preserve">
     <value>The night on which non-default roles begin:</value>
   </data>
+  <data name="NonDefaultRolesMessage" xml:space="preserve">
+    <value>Nights for non-default roles to wait: {0:D}</value>
+  </data>
   <data name="NotEnoughPlayersMessage" xml:space="preserve">
     <value>Not enough players in the game</value>
   </data>
@@ -235,7 +231,7 @@ Leave the game?</value>
   </data>
   <data name="PlayersStatus" xml:space="preserve">
     <value>Remaining players: {0:D}
-- including mafia: {1:D}</value>
+including mafia: {1:D}; yakuza: {2:D}</value>
   </data>
   <data name="PlayersText01" xml:space="preserve">
     <value>First, enter names of players. Enter at least {0:D} names, separated by paragraphs ([Enter] key).
@@ -252,7 +248,7 @@ To the right of the name, separated by a space (using [Space] and [Tab] keys or 
     <value>Cancel the last one</value>
   </data>
   <data name="RolesAliases" xml:space="preserve">
-    <value>OMDIBNPTKSFRJ</value>
+    <value>OMDIBNPTKSFRJYZ</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Townspeople
@@ -264,10 +260,12 @@ Maniac
 Priest / immortal
 Thief
 Kamikaze
-Boss of mafia / Don
+Don / boss of mafia
 Sheriff / commissioner
 Ripper
-Judge</value>
+Judge
+Yakuza
+Oyabun / boss of yakuza</value>
   </data>
   <data name="RolesOPrefix" xml:space="preserve">
     <value> (or letter isn’t specified)</value>
@@ -322,5 +320,8 @@ Protected</value>
   </data>
   <data name="WrongRoleMessage" xml:space="preserve">
     <value>This role can’t be applied to itself</value>
+  </data>
+  <data name="YakuzaWonMessage" xml:space="preserve">
+    <value>Yakuza won!</value>
   </data>
 </root>

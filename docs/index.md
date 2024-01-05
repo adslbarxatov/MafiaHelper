@@ -1,5 +1,5 @@
 # Mafia helper: user guide
-> **ƒ** &nbsp;RD AAOW FDL; 15.12.2023; 2:15
+> **ƒ** &nbsp;RD AAOW FDL; 6.01.2024; 2:10
 
 
 
@@ -24,7 +24,7 @@ of the game.
 in the current version of the application. They may not comply with official competition requirements
 and may be changed or supplemented in new versions of the product.***
 
-> Current version of the guide: MafiaHelper v 1.6
+> Current version of the guide: MafiaHelper v 1.7
 
 &nbsp;
 
@@ -32,7 +32,7 @@ and may be changed or supplemented in new versions of the product.***
 
 ### Implemented game rules
 
-The game can be played by 5 to 20 people inclusive. There is also a person moderating the game and using
+The game can be played by 5 to 30 people inclusive. There is also a person moderating the game and using
 this application.
 
 <img src="/MafiaHelper/img/01_en.png" />
@@ -109,9 +109,11 @@ During the day, by voting together with the rest of the “living” players, he
 one player and “execute” him (such a player leaves the game). He has no other possibilities.
 *Available on all days*.
 
-***Mafia*** is an organized group of players opposing civilians. During the day, he can participate
+***Mafia*** is an organized group of players opposing civilians (and `yakuza`). During the day, he can participate
 in voting and discussion, imitating civilians or other roles. At night, he can choose one player
 to “kill”. *Available on all nights*.
+
+***Yakuza*** is the same role as `mafia` but works as another one team of players (opposing both civilians and `mafia`).
 
 ***Doctor*** – a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`,
 `sheriff` and `ripper` action).
@@ -120,8 +122,8 @@ to “kill”. *Available on all nights*.
 
 ***Detective*** – a civilian. Action at night – finding out the role of the specified player (the moderator
 tells him with signs whether the specified player belongs to the mafia or not). He can use the collected
-information in the day’s discussion. The role of the mafia boss cannot be revealed (the moderator will
-give a “civilian” sign). *Available on all nights*.
+information in the day’s discussion. Roles of the `mafia boss` and the `yakuza boss` cannot be revealed (the moderator will
+give a “civilian” sign). `Detective` may become a `sheriff` if the `sheriff` dies first. *Available on all nights*.
 
 ***Prostitute / beauty*** – a conditionally civilian. Action at night – saving the specified player
 (prevents `mafia`, `sheriff` and `ripper` action). But, unlike the `doctor`, if a player
@@ -147,9 +149,11 @@ change the victim’s condition).
 himself (both players leave the game). Usually has a spontaneous character, that is, it’s a source of randomness
 in the game.
 
-***Mafia boss*** – part of the `mafia`. He doesn’t have a separate action; he plays the role of the `mafia`
+***Don / mafia boss*** – part of `mafia`. He doesn’t have a separate action; he plays the role of the `mafia`
 in composition. Boss is protected from disclosure of the role by the `detective`. He is counted as a `mafia` when
 determining the victory of one of teams.
+
+***Oyabun / yakuza boss*** – the same role as `mafia boss` but for `yakuza`.
 
 ***Sheriff*** – a civilian. Action at night – killing mafia members. If he “hits” civilians, his role doesn’t work.
 *Available on all nights*.
@@ -164,7 +168,8 @@ will take no effect on the protected player.
 
 The following are allowed in the game:
 - at least one, but not more than 50% of players with the `mafia` role (including the `mafia boss`);
-- no more than one player in any role other than `townspeople`;
+- not more than 50% of players with `mafia` and `yakuza` roles (combined, including bosses) if `yakuza` is presented;
+- no more than one player in any role other than `townspeople`, `mafia` and `yakuza`;
 - unlimited number of `townspeople` (those left without a special role).
 
 &nbsp;
@@ -181,19 +186,20 @@ The ***initial application interface*** allows you to:
 - access a full range of app and Lab help and support resources.
 
 The ***interface for entering names and roles of players*** performs:
-- independent control of the distribution
-of roles and the correctness of the input. In this case, the specified names are remembered for use in the next
-game, and the specified roles are reset after exiting the current session.
+- independent control of the distribution of roles and the correctness of the input. In this case,
+the specified names are remembered for use in the next game, and the specified roles are reset after
+exiting the current session.
 - processing the specified order of application of roles.
 
 The ***gaming activity tracking interface*** has the following capabilities:
 - displaying tooltips when you hover over abbreviations in the “roles” and “statuses” columns;
-- display of changing player statuses and sequence with color indication;
+- displaying of changing player statuses and sequence with color indication;
 - displaying a dynamic context menu when pressing buttons in the “actions” column, which contains only those actions that are currently available;
 - obvious transition between day and night phases with display of actions performed and their results;
 - control of intersecting rules;
-- control of timer with several preset intervals and audible alarm (60, 10 and 0 seconds);
+- control of timer with several preset intervals and audible alarm;
 - launch a random music track from the directory specified in the app settings (for night phases);
 - collecting completed actions in a timeline;
+- watching the game log in the build-in viewer;
 - displaying messages about incorrect application of roles;
 - displaying messages about team win / loss

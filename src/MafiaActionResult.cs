@@ -33,6 +33,11 @@
 		SuccessTurnIntoSheriffSelfToo = 4,
 
 		/// <summary>
+		/// Запрос пропущен, поскольку является заглушкой
+		/// </summary>
+		Skipped = 5,
+
+		/// <summary>
 		/// Неуспешно: неприменимо для этой роли игрока
 		/// </summary>
 		FailIncorrectRole = -1,

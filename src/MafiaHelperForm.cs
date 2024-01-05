@@ -110,6 +110,8 @@ namespace RD_AAOW
 			TimerSound.Text = Localization.GetText ("TimerSound");
 
 			NonDefaultRolesLabel.Text = Localization.GetText ("NonDefaultRolesLabel");
+
+			LanguageLabel.Text = Localization.GetDefaultText (LzDefaultTextValues.Control_InterfaceLanguage);
 			}
 
 		// Запрос справки

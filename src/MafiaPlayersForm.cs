@@ -16,7 +16,7 @@ namespace RD_AAOW
 		private string[] rolesNames;
 
 		private const uint minPlayers = 5;
-		private const uint maxPlayers = 20;
+		private const uint maxPlayers = 30;
 
 		/// <summary>
 		/// Конструктор. Запускает главную форму
@@ -165,9 +165,10 @@ namespace RD_AAOW
 				return;
 				}
 
-			// Контроль баланса мафии и жителей
-			uint mafia = counters[(int)MafiaPlayerRoles.Mafia] + counters[(int)MafiaPlayerRoles.MafiaBoss];
-			if ((mafia > players.Count / 2) || (mafia < 1))
+			// Контроль баланса мафии и жителей [tempname]
+			uint mafia2 = counters[(int)MafiaPlayerRoles.Mafia2] + counters[(int)MafiaPlayerRoles.MafiaBoss2];
+			uint yakuza = counters[(int)MafiaPlayerRoles.Yakuza] + counters[(int)MafiaPlayerRoles.YakuzaBoss];
+			if ((mafia2 + yakuza > players.Count / 2) || (mafia2 < 1))
 				{
 				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughRolesMessage");
 				players.Clear ();
@@ -176,12 +177,17 @@ namespace RD_AAOW
 
 			// Контроль уникальности остальных ролей
 			for (int i = (int)MafiaPlayerRoles.Doctor; i < rolesAliases.Length; i++)
+				{
+				if (i == (int)MafiaPlayerRoles.Yakuza)
+					continue;
+
 				if (counters[i] > 1)
 					{
 					RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "TooMuchSecondaryRolesMessage");
 					players.Clear ();
 					return;
 					}
+				}
 
 			// Успешно. Сохранение игроков без ролей
 			string s = "";

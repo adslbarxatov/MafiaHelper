@@ -11,9 +11,9 @@
 		Townspeople,
 
 		/// <summary>
-		/// Мафия
+		/// Мафия [tempname]
 		/// </summary>
-		Mafia,
+		Mafia2,
 
 		/// <summary>
 		/// Доктор, врач
@@ -51,9 +51,9 @@
 		Kamikaze,
 
 		/// <summary>
-		/// Босс мафии
+		/// Босс мафии [tempname]
 		/// </summary>
-		MafiaBoss,
+		MafiaBoss2,
 
 		/// <summary>
 		/// Шериф / комиссар
@@ -69,5 +69,15 @@
 		/// Судья
 		/// </summary>
 		Jugde,
+
+		/// <summary>
+		/// Якудза
+		/// </summary>
+		Yakuza,
+
+		/// <summary>
+		/// Босс якудза
+		/// </summary>
+		YakuzaBoss,
 		}
 	}

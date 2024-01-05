@@ -57,25 +57,52 @@
 			}
 
 		/// <summary>
-		/// Возвращает true, если роль игрока относится к мафии
+		/// Возвращает true, если роль игрока относится к мафии [tempname]
 		/// </summary>
-		public bool HasMafiaRole
+		public bool HasMafiaRole2
 			{
 			get
 				{
-				return RoleIsMafia (role);
+				return RoleIsMafia2 (role);
 				}
 			}
 
 		/// <summary>
-		/// Метод возвращает true, если роль игрока относится к мафии
+		/// Метод возвращает true, если роль игрока относится к мафии [tempname]
 		/// </summary>
-		public static bool RoleIsMafia (MafiaPlayerRoles Role)
+		public static bool RoleIsMafia2 (MafiaPlayerRoles Role)
 			{
 			switch (Role)
 				{
-				case MafiaPlayerRoles.Mafia:
-				case MafiaPlayerRoles.MafiaBoss:
+				case MafiaPlayerRoles.Mafia2:
+				case MafiaPlayerRoles.MafiaBoss2:
+					return true;
+
+				default:
+					return false;
+				}
+			}
+
+		/// <summary>
+		/// Возвращает true, если роль игрока относится к якудза
+		/// </summary>
+		public bool HasYakuzaRole
+			{
+			get
+				{
+				return RoleIsYakuza (role);
+				}
+			}
+
+		/// <summary>
+		/// Метод возвращает true, если роль игрока относится к якудза
+		/// </summary>
+		public static bool RoleIsYakuza (MafiaPlayerRoles Role)
+			{
+			switch (Role)
+				{
+				case MafiaPlayerRoles.Yakuza:
+				case MafiaPlayerRoles.YakuzaBoss:
 					return true;
 
 				default:
@@ -102,9 +129,10 @@
 			switch (Role)
 				{
 				case MafiaPlayerRoles.Townspeople:
-				case MafiaPlayerRoles.Mafia:
+				case MafiaPlayerRoles.Mafia2:
 				case MafiaPlayerRoles.Doctor:
 				case MafiaPlayerRoles.Kamikaze:
+				case MafiaPlayerRoles.Yakuza:
 					return true;
 
 				default:
@@ -135,8 +163,9 @@
 			{
 			switch (Role)
 				{
-				case MafiaPlayerRoles.MafiaBoss:
+				case MafiaPlayerRoles.MafiaBoss2:
 				case MafiaPlayerRoles.Immortal:
+				case MafiaPlayerRoles.YakuzaBoss:
 					return true;
 
 				default:

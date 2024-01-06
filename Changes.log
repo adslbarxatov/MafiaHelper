@@ -8,7 +8,7 @@ ToDo:
 
 Version 1.7:
 • Added roles of yakuza and yakuza boss (concurring equivalent of mafia);
-• Implemented the built-in game log with auto-scrolling to the latest event and color highlighting;
+• Implemented the built-in game log viewer with auto-scrolling to the latest event and color highlighting;
 • The action skipping has been re-implemented; it will be indicated with small alias letters;
 • The upper players limit has been increased to 30;
 • Added a color and tooltip indicators for delayed roles;

@@ -1,9 +1,11 @@
 Mafia helper: changes log
 
 ToDo:
-- Names numeration
-- Take out roles that already used in players list during its creation
-- Horn, 30s and 1m should have stand-alone buttons
+- Doctor should give the complete immunity;
+- Stand-alone simple list of action results in the actions message;
+- Names numeration;
+- Take out roles that already used in players list during its creation;
+- Horn, 30s and 1m should have stand-alone buttons;
 - Release the doctor role?
 
 Version 1.7:

@@ -1,6 +1,7 @@
 Mafia helper: changes log
 
 ToDo:
+- Fix: when detective becomes sheriff the new role still works as died one
 - Doctor should give the complete immunity;
 - Stand-alone simple list of action results in the actions message;
 - Names numeration;

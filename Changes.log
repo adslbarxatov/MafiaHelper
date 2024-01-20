@@ -1,13 +1,27 @@
 Mafia helper: changes log
 
 ToDo:
-- Fix: when detective becomes sheriff the new role still works as died one
-- Doctor should give the complete immunity;
-- Stand-alone simple list of action results in the actions message;
-- Names numeration;
-- Take out roles that already used in players list during its creation;
-- Horn, 30s and 1m should have stand-alone buttons;
-- Release the doctor role?
+- Reaper is a stand-alone team?
+- Add the roles auto-spreading with flags in the stand-alone window
+
+Version 1.8:
+• Players addition interface has been rewritten:
+  - players are now enumerated;
+  - players can be added, removed or reordered using buttons;
+  - players can be added or changed using the stand-alone selection interface;
+  - edition of the player is available on double click;
+• The doctor’s action on the player now overrides all his murder events except for
+  the kamikaze’s detonation and the execution;
+• The doctor role has been unlocked. The roles order in the app is now
+  completely abstract (is not based on logical sequence);
+• The results message now contains only succeeded actions without their
+  initiators. Detailed info is still available in the game log;
+• Added some details to the game log;
+• Added a stand-alone horn button;
+• Bug “when detective becomes sheriff the new role still works as died one”
+  was not confirmed during tests;
+• Fixed the inability to steal the “killing” part of the role of beauty;
+• Core updates have been applied
 
 Version 1.7:
 • Added roles of yakuza and yakuza boss (concurring equivalent of mafia);

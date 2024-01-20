@@ -134,8 +134,28 @@
 Убить
 —</value>
   </data>
+  <data name="ActionsResults" xml:space="preserve">
+    <value>казнён
+убит
+вылечен
+роль раскрыта
+спасён
+лишён голоса
+—
+роль украдена
+взорван
+—
+убит
+выпотрошен
+защищён
+убит
+—</value>
+  </data>
   <data name="Action_Skip" xml:space="preserve">
     <value>Пропустить роль</value>
+  </data>
+  <data name="AllButton" xml:space="preserve">
+    <value>Весь список</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>Все роли уже используются</value>
@@ -229,14 +249,20 @@
   <data name="NotEnoughRolesMessage" xml:space="preserve">
     <value>В игре слишком мало мирных жителей (менее 50%) или слишком мало мафии (менее 2 игроков)</value>
   </data>
+  <data name="PlayerNameEmptyMessage" xml:space="preserve">
+    <value>Имя игрока не может быть пустым</value>
+  </data>
+  <data name="PlayersClearMessage" xml:space="preserve">
+    <value>Вы хотите очистить весь список игроков или только их роли?</value>
+  </data>
   <data name="PlayersStatus" xml:space="preserve">
     <value>Оставшиеся игроки: {0:D}
 из них – мафия: {1:D}; якудза: {2:D}</value>
   </data>
   <data name="PlayersText01" xml:space="preserve">
-    <value>Для начала укажите имена игроков. Введите не менее {0:D} имён, разделяя их абзацами (клавишей [Enter]).
+    <value>Для начала укажите имена игроков. Введите не менее {0:D} имён с помощью соответствующей кнопки. Вы можете изменять ранее созданных игроков с помощью двойного щелчка левой кнопкой мыши.
 
-Справа от имени через пробел (с помощью клавиш [Пробел] и [Tab] или через контекстное меню) можно указать одну из следующих ролей (одной буквой любого регистра):</value>
+Слева от имени можно увидеть одну из следующих ролей (одной буквой):</value>
   </data>
   <data name="PlayersText02" xml:space="preserve">
     <value>Далее, расположите ночные роли в необходимой последовательности. Обратите внимание, что порядок ролей в первом списке заблокирован и пока не может быть изменён</value>
@@ -249,6 +275,9 @@
   </data>
   <data name="RolesAliases" xml:space="preserve">
     <value>ОМДИБНСВЗГШПУЯЛ</value>
+  </data>
+  <data name="RolesButton" xml:space="preserve">
+    <value>Только роли</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Обыватель / мирный житель
@@ -291,8 +320,7 @@
     <value>Сообщение об истечении времени</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
-    <value>Гудок
-30 секунд
+    <value>30 секунд
 1 минута
 90 секунд
 2 минуты

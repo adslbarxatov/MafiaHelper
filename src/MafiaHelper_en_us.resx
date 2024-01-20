@@ -134,8 +134,28 @@ Protect
 Kill
 —</value>
   </data>
+  <data name="ActionsResults" xml:space="preserve">
+    <value>executed
+killed
+healed
+role has been revealed
+saved
+muted
+—
+role has been stolen
+exploded
+—
+killed
+gutted
+protected
+killed
+—</value>
+  </data>
   <data name="Action_Skip" xml:space="preserve">
     <value>Skip the role</value>
+  </data>
+  <data name="AllButton" xml:space="preserve">
+    <value>Entire list</value>
   </data>
   <data name="AllRolesUsed" xml:space="preserve">
     <value>All roles are already in use</value>
@@ -229,14 +249,20 @@ Leave the game?</value>
   <data name="NotEnoughRolesMessage" xml:space="preserve">
     <value>There are too few townspeople (less than 50%) or too few mafia (less than 2 players) in the game</value>
   </data>
+  <data name="PlayerNameEmptyMessage" xml:space="preserve">
+    <value>Player’s name cannot be empty</value>
+  </data>
+  <data name="PlayersClearMessage" xml:space="preserve">
+    <value>Do you want to clear the entire list of players or just their roles?</value>
+  </data>
   <data name="PlayersStatus" xml:space="preserve">
     <value>Remaining players: {0:D}
 including mafia: {1:D}; yakuza: {2:D}</value>
   </data>
   <data name="PlayersText01" xml:space="preserve">
-    <value>First, enter names of players. Enter at least {0:D} names, separated by paragraphs ([Enter] key).
+    <value>First, enter names of players. Enter at least {0:D} names using corresponding button. You can edit the previously created players using left double click.
 
-To the right of the name, separated by a space (using [Space] and [Tab] keys or the context menu), you can specify one of the following roles (one letter of any case):</value>
+To the left of the name you can see one of the following roles (one letter):</value>
   </data>
   <data name="PlayersText02" xml:space="preserve">
     <value>Second, arrange the night roles in needed sequence. Please note that the order of roles in the first list is locked and cannot be changed yet</value>
@@ -249,6 +275,9 @@ To the right of the name, separated by a space (using [Space] and [Tab] keys or 
   </data>
   <data name="RolesAliases" xml:space="preserve">
     <value>OMDIBNPTKSFRJYZ</value>
+  </data>
+  <data name="RolesButton" xml:space="preserve">
+    <value>Roles only</value>
   </data>
   <data name="RolesNames" xml:space="preserve">
     <value>Townspeople
@@ -291,8 +320,7 @@ Protected</value>
     <value>Time-out message</value>
   </data>
   <data name="TimerLines" xml:space="preserve">
-    <value>Horn
-30 seconds
+    <value>30 seconds
 1 minute
 90 seconds
 2 minutes

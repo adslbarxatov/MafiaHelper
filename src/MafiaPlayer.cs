@@ -57,25 +57,25 @@
 			}
 
 		/// <summary>
-		/// Возвращает true, если роль игрока относится к мафии [tempname]
+		/// Возвращает true, если роль игрока относится к мафии
 		/// </summary>
-		public bool HasMafiaRole2
+		public bool HasMafiaRole
 			{
 			get
 				{
-				return RoleIsMafia2 (role);
+				return RoleIsMafia (role);
 				}
 			}
 
 		/// <summary>
-		/// Метод возвращает true, если роль игрока относится к мафии [tempname]
+		/// Метод возвращает true, если роль игрока относится к мафии
 		/// </summary>
-		public static bool RoleIsMafia2 (MafiaPlayerRoles Role)
+		public static bool RoleIsMafia (MafiaPlayerRoles Role)
 			{
 			switch (Role)
 				{
-				case MafiaPlayerRoles.Mafia2:
-				case MafiaPlayerRoles.MafiaBoss2:
+				case MafiaPlayerRoles.Mafia:
+				case MafiaPlayerRoles.MafiaBoss:
 					return true;
 
 				default:
@@ -129,7 +129,7 @@
 			switch (Role)
 				{
 				case MafiaPlayerRoles.Townspeople:
-				case MafiaPlayerRoles.Mafia2:
+				case MafiaPlayerRoles.Mafia:
 				case MafiaPlayerRoles.Doctor:
 				case MafiaPlayerRoles.Kamikaze:
 				case MafiaPlayerRoles.Yakuza:
@@ -148,7 +148,8 @@
 			switch (Role)
 				{
 				case MafiaPlayerRoles.Thief:
-				case MafiaPlayerRoles.Doctor:
+				/*case MafiaPlayerRoles.Doctor:
+				*/
 					return true;
 
 				default:
@@ -163,9 +164,27 @@
 			{
 			switch (Role)
 				{
-				case MafiaPlayerRoles.MafiaBoss2:
+				case MafiaPlayerRoles.MafiaBoss:
 				case MafiaPlayerRoles.Immortal:
 				case MafiaPlayerRoles.YakuzaBoss:
+					return true;
+
+				default:
+					return false;
+				}
+			}
+
+		/// <summary>
+		/// Метод возвращает true, если роль может присутствовать в игре более
+		/// чем в единственном экземпляре
+		/// </summary>
+		public static bool RoleCanBeTeam (MafiaPlayerRoles Role)
+			{
+			switch (Role)
+				{
+				case MafiaPlayerRoles.Mafia:
+				case MafiaPlayerRoles.Yakuza:
+				case MafiaPlayerRoles.Townspeople:
 					return true;
 
 				default:
@@ -323,7 +342,7 @@
 		/// </summary>
 		public void TurnIntoSheriff ()
 			{
-			if (alive && (role == MafiaPlayerRoles.Detective))
+			if (role == MafiaPlayerRoles.Detective)
 				role = MafiaPlayerRoles.Sheriff;
 			}
 

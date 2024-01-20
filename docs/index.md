@@ -1,5 +1,5 @@
 # Mafia helper: user guide
-> **ƒ** &nbsp;RD AAOW FDL; 6.01.2024; 2:10
+> **ƒ** &nbsp;RD AAOW FDL; 20.01.2024; 23:14
 
 
 
@@ -24,7 +24,7 @@ of the game.
 in the current version of the application. They may not comply with official competition requirements
 and may be changed or supplemented in new versions of the product.***
 
-> Current version of the guide: MafiaHelper v 1.7
+> Current version of the guide: MafiaHelper v 1.8
 
 &nbsp;
 
@@ -115,9 +115,8 @@ to “kill”. *Available on all nights*.
 
 ***Yakuza*** is the same role as `mafia` but works as another one team of players (opposing both civilians and `mafia`).
 
-***Doctor*** – a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`,
+***Doctor*** – a civilian. Action at night – saving the specified player from “murder” (prevents `mafia`, `yakuza`,
 `sheriff` and `ripper` action).
-*In order for the role to work, it is one of the first called in the app (along with the `thief`)*.
 *Available on all nights*.
 
 ***Detective*** – a civilian. Action at night – finding out the role of the specified player (the moderator
@@ -143,7 +142,7 @@ an effect during the current night (the `doctor` and the `beauty` will not be ab
 will receive the wrong answer from the moderator, the `priest` will lose protection, the `maniac` will not
 change the victim’s condition).
 *In relation to the `mafia`, the use of the role is controversial, because it is represented by several players*.
-*In order for the role to work, it is one of the first called in the app (along with the `doctor`)*.
+*In order for the role to work, it is the first called role in the app*.
 
 ***Kamikaze*** – a conditionally civilian. The action during the day is to destroy one player along with
 himself (both players leave the game). Usually has a spontaneous character, that is, it’s a source of randomness
@@ -180,7 +179,7 @@ The following are allowed in the game:
 
 The ***initial application interface*** allows you to:
 - select the interface language;
-- configure app settings;
+- configure app notifications;
 - set the number of the first night when non-default roles (other than `townspeople`, `mafia`, `detective`, `doctor` and `sheriff`) become playable;
 - specify the directory with the background music;
 - access a full range of app and Lab help and support resources.

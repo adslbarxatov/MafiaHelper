@@ -64,10 +64,10 @@ namespace RD_AAOW
 				}
 			catch { }
 
-			LanguageCombo.Items.AddRange (Localization.LanguagesNames);
+			LanguageCombo.Items.AddRange (RDLocale.LanguagesNames);
 			try
 				{
-				LanguageCombo.SelectedIndex = (int)Localization.CurrentLanguage;
+				LanguageCombo.SelectedIndex = (int)RDLocale.CurrentLanguage;
 				}
 			catch
 				{
@@ -87,7 +87,7 @@ namespace RD_AAOW
 			catch
 				{
 				RDGenerics.MessageBox (RDMessageTypes.Warning_Center,
-					Localization.GetDefaultText (LzDefaultTextValues.Message_PackageSavingFailure));
+					RDLocale.GetDefaultText (RDLDefaultTexts.Message_PackageSavingFailure));
 				}
 			}
 
@@ -95,23 +95,23 @@ namespace RD_AAOW
 		private void LanguageCombo_SelectedIndexChanged (object sender, EventArgs e)
 			{
 			// Сохранение языка
-			Localization.CurrentLanguage = (SupportedLanguages)LanguageCombo.SelectedIndex;
+			RDLocale.CurrentLanguage = (RDLanguages)LanguageCombo.SelectedIndex;
 
-			BExit.Text = Localization.GetDefaultText (LzDefaultTextValues.Button_Exit);
-			AboutButton.Text = Localization.GetDefaultText (LzDefaultTextValues.Control_AppAbout);
-			BBegin.Text = Localization.GetText ("BBegin");
+			BExit.Text = RDLocale.GetDefaultText (RDLDefaultTexts.Button_Exit);
+			AboutButton.Text = RDLocale.GetDefaultText (RDLDefaultTexts.Control_AppAbout);
+			BBegin.Text = RDLocale.GetText ("BBegin");
 
 			MainPage.Text = BBegin.Text;
-			SettingsPage.Text = Localization.GetText ("BSettings");
-			MusicPathLabel.Text = FBDialog.Description = Localization.GetText ("MusicPathLabel");
+			SettingsPage.Text = RDLocale.GetText ("BSettings");
+			MusicPathLabel.Text = FBDialog.Description = RDLocale.GetText ("MusicPathLabel");
 
-			TimerSettingsLabel.Text = Localization.GetText ("TimerSettingsLabel");
-			TimerEndMessage.Text = Localization.GetText ("TimerEndMessage");
-			TimerSound.Text = Localization.GetText ("TimerSound");
+			TimerSettingsLabel.Text = RDLocale.GetText ("TimerSettingsLabel");
+			TimerEndMessage.Text = RDLocale.GetText ("TimerEndMessage");
+			TimerSound.Text = RDLocale.GetText ("TimerSound");
 
-			NonDefaultRolesLabel.Text = Localization.GetText ("NonDefaultRolesLabel");
+			NonDefaultRolesLabel.Text = RDLocale.GetText ("NonDefaultRolesLabel");
 
-			LanguageLabel.Text = Localization.GetDefaultText (LzDefaultTextValues.Control_InterfaceLanguage);
+			LanguageLabel.Text = RDLocale.GetDefaultText (RDLDefaultTexts.Control_InterfaceLanguage);
 			}
 
 		// Запрос справки
@@ -145,7 +145,7 @@ namespace RD_AAOW
 
 			// Получение списка игроков
 			MafiaPlayersForm mpf = new MafiaPlayersForm ();
-			if (mpf.Players.Count > 0)
+			if (!mpf.Cancelled)
 				{
 				MafiaGameForm mgf = new MafiaGameForm (mpf.Players, mpf.PlayersRolesOrder);
 				mgf.Dispose ();

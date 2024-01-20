@@ -11,9 +11,9 @@
 		Townspeople,
 
 		/// <summary>
-		/// Мафия [tempname]
+		/// Мафия
 		/// </summary>
-		Mafia2,
+		Mafia,
 
 		/// <summary>
 		/// Доктор, врач
@@ -51,9 +51,9 @@
 		Kamikaze,
 
 		/// <summary>
-		/// Босс мафии [tempname]
+		/// Босс мафии
 		/// </summary>
-		MafiaBoss2,
+		MafiaBoss,
 
 		/// <summary>
 		/// Шериф / комиссар

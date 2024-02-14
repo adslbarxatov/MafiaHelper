@@ -273,6 +273,9 @@
   <data name="ResetText" xml:space="preserve">
     <value>Отменить последнее</value>
   </data>
+  <data name="RipperWonMessage" xml:space="preserve">
+    <value>Потрошитель победил!</value>
+  </data>
   <data name="RolesAliases" xml:space="preserve">
     <value>ОМДИБНСВЗГШПУЯЛ</value>
   </data>

@@ -1,4 +1,6 @@
-_Changes for v 1.8_:
+_Changes for v 1.8.5_:
+- Added separate processing of ripper winnings;
+- Restored the simple method of names entering;
 - Players addition interface has been rewritten:
     - players are now enumerated;
     - players can be added, removed or reordered using buttons;
@@ -8,7 +10,4 @@ _Changes for v 1.8_:
 - The `doctor` role has been unlocked. The roles order in the app is now completely abstract (is not based on logical sequence);
 - The results message now contains only succeeded actions without their initiators. Detailed info is still available in the game log;
 - Added some details to the game log;
-- Added a stand-alone horn button;
-• Bug “*when `detective` becomes sheriff the new role still works as died one*” was not confirmed during tests;
-- Fixed the inability to steal the “killing” part of the role of `beauty`;
-- Core updates have been applied
+- Added a stand-alone horn button

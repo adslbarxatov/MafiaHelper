@@ -1,9 +1,8 @@
 Mafia helper: changes log
 
-ToDo:
-- Reaper is a stand-alone team?
-- Restore the simple names enter;
-? Add the roles auto-spreading with flags in the stand-alone window
+Version 1.8.5:
+• Added separate processing of ripper winnings;
+• Restored the simple method of names entering
 
 Version 1.8:
 • Players addition interface has been rewritten:

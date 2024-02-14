@@ -148,8 +148,6 @@
 			switch (Role)
 				{
 				case MafiaPlayerRoles.Thief:
-				/*case MafiaPlayerRoles.Doctor:
-				*/
 					return true;
 
 				default:

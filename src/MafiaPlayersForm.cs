@@ -37,23 +37,12 @@ namespace RD_AAOW
 			RolesTitle.Text = RDLocale.GetText ("RolesTitle");
 			PlayersTitle.Text = RDLocale.GetText ("PlayersTitle");
 
-			/*PlayersText.Text = RDGenerics.GetAppSettingsValue ("PlayersList");
-			*/
 			PlayersLabel.Text = string.Format (RDLocale.GetText ("PlayersText01"), minPlayers);
 
 			// Загрузка ролей
 			rolesAliases = RDLocale.GetText ("RolesAliases");
 			rolesNames.AddRange (RDLocale.GetText ("RolesNames").Split (linesSplitters,
 				StringSplitOptions.RemoveEmptyEntries));
-
-			/*
-			PlayersText.ContextMenu = new ContextMenu ();
-			for (int i = 0; i < rolesNames.Length; i++)
-				{
-				PlayersText.ContextMenu.MenuItems.Add (rolesNames[i], AddRole_Click);
-				PlayersText.ContextMenu.MenuItems[i].Tag = i;
-				}
-			*/
 
 			// Загрузка сохранённых игроков
 			string[] savedPlayers = RDGenerics.GetAppSettingsValue ("PlayersList").Split (linesSplitters,
@@ -118,10 +107,6 @@ namespace RD_AAOW
 		// Запуск
 		private void BBegin_Click (object sender, EventArgs e)
 			{
-			/* Определение числа игроков
-			string[] pl = PlayersText.Text.Split (linesSplitters, StringSplitOptions.RemoveEmptyEntries);
-			*/
-
 			// Счётчики
 			uint[] counters = new uint[rolesAliases.Length];
 			for (int i = 0; i < rolesAliases.Length; i++)
@@ -129,46 +114,12 @@ namespace RD_AAOW
 
 			// Разбор
 			for (int i = 0; i < players.Count; i++)
-				{
-				/*
-				string[] v = pl[i].Split (rolesSplitters, StringSplitOptions.RemoveEmptyEntries);
-
-				// Такое может случиться при забое строки пробелами
-				if (v.Length < 1)
-					continue;
-				*/
-
-				/* Обычный игрок
-				if (v.Length == 1)
-					{
-					players.Add (new MafiaPlayer (v[0], MafiaPlayerRoles.Townspeople));
-					counters[0]++;
-					continue;
-					}
-				*/
 				counters[(int)players[i].Role]++;
-
-				/* Роли
-				string c = v[1].ToUpper ().Substring (0, 1);
-				if (!rolesAliases.Contains (c))
-					{
-					RDGenerics.MessageBox (RDMessageTypes.Warning_Center,
-						string.Format (RDLocale.GetText ("UnknownRoleMessage"), i + 1));
-					players.Clear ();
-					return;
-					}
-
-				int r = rolesAliases.IndexOf (c);
-				players.Add (new MafiaPlayer (v[0], (MafiaPlayerRoles)r));
-				counters[r]++;*/
-				}
 
 			// Контроль числа игроков
 			if (players.Count < minPlayers)
 				{
 				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughPlayersMessage");
-				/*players.Clear ();
-				*/
 				return;
 				}
 
@@ -177,8 +128,6 @@ namespace RD_AAOW
 				{
 				RDGenerics.MessageBox (RDMessageTypes.Warning_Center,
 					string.Format (RDLocale.GetText ("TooMuchPlayersMessage"), maxPlayers));
-				/*players.Clear ();
-				*/
 				return;
 				}
 
@@ -188,36 +137,20 @@ namespace RD_AAOW
 			if ((mafia + yakuza > players.Count / 2) || (mafia < 1))
 				{
 				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughRolesMessage");
-				/*players.Clear ();
-				*/
 				return;
 				}
 
 			// Контроль уникальности остальных ролей
 			for (int i = 0; i < rolesAliases.Length; i++)
 				{
-				/*
-				if (i == (int)MafiaPlayerRoles.Yakuza)
-					continue;
-				*/
-
 				if (!MafiaPlayer.RoleCanBeTeam ((MafiaPlayerRoles)i) && (counters[i] > 1))
 					{
 					RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "TooMuchSecondaryRolesMessage");
-					/*players.Clear ();
-					*/
 					return;
 					}
 				}
 
-			/* Успешно. Сохранение игроков без ролей
-			string s = "";
-			for (int i = 0; i < players.Count; i++)
-				s += (players[i].Name + rolesSplitters[0].ToString () + RDLocale.RN);
-			RDGenerics.SetAppSettingsValue ("PlayersList", s);
-			*/
-
-			// Сохраненеи имён игроков
+			// Сохранение имён игроков
 			string savedPlayers = "";
 			for (int i = 0; i < players.Count; i++)
 				savedPlayers += (players[i].Name + RDLocale.RN);
@@ -278,14 +211,6 @@ namespace RD_AAOW
 			RDGenerics.ShowAbout (false);
 			}
 
-		/* Добавление роли
-		private void AddRole_Click (object sender, EventArgs e)
-			{
-			PlayersText.Text = PlayersText.Text.Insert (PlayersText.SelectionStart, rolesSplitters[1].ToString () +
-				rolesAliases[(int)((MenuItem)sender).Tag].ToString ());
-			}
-		*/
-
 		// Сортировка ролей
 		private void RolesOrderUp_Click (object sender, EventArgs e)
 			{
@@ -301,19 +226,6 @@ namespace RD_AAOW
 			RolesSecondOrder.Items.Insert (up ? (i - 1) : (i + 1), s);
 			RolesSecondOrder.SelectedIndex = up ? (i - 1) : (i + 1);
 			}
-
-		/* Расчёт числа введённых игроков
-		private void PlayersText_TextChanged (object sender, EventArgs e)
-			{
-			int count = PlayersText.Text.Length - PlayersText.Text.Replace (RDLocale.RN, "").Length;
-			count /= 2;
-
-			if (!string.IsNullOrWhiteSpace (PlayersText.Text) && !PlayersText.Text.EndsWith (RDLocale.RN))
-				count++;
-
-			PlayersTitle.Text = RDLocale.GetText ("PlayersTitle") + " " + count.ToString ();
-			}
-		*/
 
 		// Добавление нового игрока
 		private void AddPlayer_Click (object sender, EventArgs e)
@@ -485,6 +397,37 @@ namespace RD_AAOW
 
 			RefreshPlayersList ();
 			PlayersList.SelectedIndex = 0;
+			}
+
+		// Ручной ввод списка имён
+		private void ManualNamesAddition_Click (object sender, EventArgs e)
+			{
+			// Сохранение имён игроков
+			string savedPlayers = "";
+			for (int i = 0; i < players.Count; i++)
+				savedPlayers += (players[i].Name + RDLocale.RN);
+
+			RDGenerics.SetAppSettingsValue ("PlayersList", savedPlayers);
+
+			// Запрос изменённого списка
+			MafiaPlayersListForm mplf = new MafiaPlayersListForm (savedPlayers);
+			if (mplf.Cancelled)
+				{
+				mplf.Dispose ();
+				return;
+				}
+
+			// Загрузка сохранённых игроков
+			savedPlayers = mplf.PlayersList;
+			mplf.Dispose ();
+			RDGenerics.SetAppSettingsValue ("PlayersList", savedPlayers);
+
+			players.Clear ();
+			string[] playersNames = savedPlayers.Split (linesSplitters, StringSplitOptions.RemoveEmptyEntries);
+			for (int i = 0; i < playersNames.Length; i++)
+				players.Add (new MafiaPlayer (playersNames[i].Trim (), MafiaPlayerRoles.Townspeople));
+
+			RefreshPlayersList ();
 			}
 		}
 	}

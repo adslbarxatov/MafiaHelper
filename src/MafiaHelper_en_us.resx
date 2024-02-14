@@ -273,6 +273,9 @@ To the left of the name you can see one of the following roles (one letter):</va
   <data name="ResetText" xml:space="preserve">
     <value>Cancel the last one</value>
   </data>
+  <data name="RipperWonMessage" xml:space="preserve">
+    <value>Ripper won!</value>
+  </data>
   <data name="RolesAliases" xml:space="preserve">
     <value>OMDIBNPTKSFRJYZ</value>
   </data>

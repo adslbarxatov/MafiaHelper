@@ -1,4 +1,7 @@
-_Changes for v 1.8.5_:
+_Changes for v 1.9_:
+- Added separate buttons for 30 and 60 seconds timer;
+- Added numeration for players in the game window;
+- Replaced the horn sound;
 - Added separate processing of ripper winnings;
 - Restored the simple method of names entering;
 - Players addition interface has been rewritten:
@@ -6,8 +9,4 @@ _Changes for v 1.8.5_:
     - players can be added, removed or reordered using buttons;
     - players can be added or changed using the stand-alone selection interface;
     - edition of the player is available on double click;
-- The `doctor`’s action on the player now overrides all his murder events except for the `kamikaze`’s detonation and the execution;
-- The `doctor` role has been unlocked. The roles order in the app is now completely abstract (is not based on logical sequence);
-- The results message now contains only succeeded actions without their initiators. Detailed info is still available in the game log;
-- Added some details to the game log;
-- Added a stand-alone horn button
+- Probably, fixed bug with health lock for beauty's pair

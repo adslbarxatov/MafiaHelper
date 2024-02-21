@@ -1,10 +1,10 @@
 Mafia helper: changes log
 
-ToDo:
-- Replace the horn sound;
-- Add 30s and 1m separated buttons;
-- Fix the beauty: the role ignore should override the health lock;
-- Add numbers for players at the game window
+Version 1.9:
+• Probably, fixed bug with health lock for beauty's pair;
+• Replaced the horn sound;
+• Added separate buttons for 30 and 60 seconds timer;
+• Added numeration for players in the game window
 
 Version 1.8.5:
 • Added separate processing of ripper winnings;

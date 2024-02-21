@@ -1,5 +1,5 @@
 # Mafia helper: user guide
-> **ƒ** &nbsp;RD AAOW FDL; 20.01.2024; 23:14
+> **ƒ** &nbsp;RD AAOW FDL; 22.02.2024; 0:48
 
 
 
@@ -24,7 +24,7 @@ of the game.
 in the current version of the application. They may not comply with official competition requirements
 and may be changed or supplemented in new versions of the product.***
 
-> Current version of the guide: MafiaHelper v 1.8
+> Current version of the guide: MafiaHelper v 1.9
 
 &nbsp;
 
@@ -185,6 +185,7 @@ The ***initial application interface*** allows you to:
 - access a full range of app and Lab help and support resources.
 
 The ***interface for entering names and roles of players*** performs:
+- managing, saving and ordering of players names;
 - independent control of the distribution of roles and the correctness of the input. In this case,
 the specified names are remembered for use in the next game, and the specified roles are reset after
 exiting the current session.

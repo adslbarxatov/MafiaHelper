@@ -1,4 +1,5 @@
-_Changes for v 1.9_:
+_Changes for v 1.9.1_:
+- Update for XPUN has been applied;
 - Added separate buttons for 30 and 60 seconds timer;
 - Added numeration for players in the game window;
 - Replaced the horn sound;

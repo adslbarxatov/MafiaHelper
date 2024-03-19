@@ -20,7 +20,6 @@ namespace RD_AAOW
 
 			this.CancelButton = BExit;
 			BExit.Text = RDLocale.GetDefaultText (RDLDefaultTexts.Button_Close);
-			/*this.AcceptButton = BApply;*/
 			BApply.Text = RDLocale.GetDefaultText (RDLDefaultTexts.Button_Apply);
 
 			// Загрузка настроек

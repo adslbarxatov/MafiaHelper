@@ -1,7 +1,10 @@
 Mafia helper: changes log
 
+Version 1.9.1:
+• Update for XPUN has been applied
+
 Version 1.9:
-• Probably, fixed bug with health lock for beauty's pair;
+• Probably, fixed the bug with health lock for beauty's pair;
 • Replaced the horn sound;
 • Added separate buttons for 30 and 60 seconds timer;
 • Added numeration for players in the game window

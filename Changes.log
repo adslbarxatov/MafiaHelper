@@ -1,5 +1,10 @@
 Mafia helper: changes log
 
+Version 1.9.5:
+• Updated HypeHelp and Updates checker mechanics: this should fix apps freezing immediately
+  after launch (on some PCs);
+• Updated the HypeHelp links list
+
 Version 1.9.1:
 • Update for XPUN has been applied
 

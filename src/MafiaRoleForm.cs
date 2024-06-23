@@ -69,6 +69,7 @@ namespace RD_AAOW
 				b.Height = Button00.Height;
 				b.Left = Button00.Left;
 				b.Top = Button00.Top + 24 * i;
+				b.FlatStyle = FlatStyle.Popup;
 
 				b.Text = roles[i];
 				b.Click += BApply_Click;

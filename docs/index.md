@@ -1,5 +1,5 @@
 # Mafia helper: user guide
-> **ƒ** &nbsp;RD AAOW FDL; 22.02.2024; 0:48
+> **ƒ** &nbsp;RD AAOW FDL; 23.06.2024; 23:35
 
 
 
@@ -24,7 +24,7 @@ of the game.
 in the current version of the application. They may not comply with official competition requirements
 and may be changed or supplemented in new versions of the product.***
 
-> Current version of the guide: MafiaHelper v 1.9
+> Current version of the guide: MafiaHelper v 1.10
 
 &nbsp;
 

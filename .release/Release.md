@@ -1,8 +1,5 @@
-_Changes for v 1.10_:
+_Changes for v 1.10.2_:
+- XPUN update has been applied;
 - The application has been retargeted to `.NET Framework 4.8.1`;
 - Access checking method has been completely rewritten: now it will properly detect problems with file / registry input / output and help user with fixing them;
-- Added the special section in the user guide for access troubleshooting;
-- Updated HypeHelp and Updates checker mechanics: this should fix apps freezing immediately after launch (on some PCs);
-- Updated the HypeHelp links list;
-- Update for XPUN has been applied;
-- Added separate buttons for 30 and 60 seconds timer
+- Added the special section in the user guide for access troubleshooting

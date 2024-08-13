@@ -45,8 +45,6 @@ namespace RD_AAOW
 				StringSplitOptions.RemoveEmptyEntries));
 
 			// Загрузка сохранённых игроков
-			/*string[] savedPlayers = RDGenerics.GetAppSettingsValue ("PlayersList").Split (linesSplitters,
-				StringSplitOptions.RemoveEmptyEntries);*/
 			string[] savedPlayers = MafiaSettings.PlayersList.Split (linesSplitters,
 				StringSplitOptions.RemoveEmptyEntries);
 			for (int i = 0; i < savedPlayers.Length; i++)
@@ -54,14 +52,10 @@ namespace RD_AAOW
 			RefreshPlayersList ();
 
 			// Стандартный или сохранённый ранее порядок
-			/*string rolesOrder = RDGenerics.GetAppSettingsValue ("RolesOrder");
-			*/
 			string[] v = MafiaSettings.RolesOrder.Split (rolesSplitters,
 				StringSplitOptions.RemoveEmptyEntries);
 			List<int> order = new List<int> ();
 
-			/*string[] v = rolesOrder.Split (rolesSplitters, StringSplitOptions.RemoveEmptyEntries);
-			*/
 			int count = MafiaRolesOrder.DefaultNightRolesOrder.Length;
 
 			for (int i = 0; i < count; i++)
@@ -161,8 +155,6 @@ namespace RD_AAOW
 			for (int i = 0; i < players.Count; i++)
 				savedPlayers += (players[i].Name + RDLocale.RN);
 
-			/*RDGenerics.SetAppSettingsValue ("PlayersList", savedPlayers);
-			*/
 			MafiaSettings.PlayersList = savedPlayers;
 
 			// Сохранение порядка применения ролей
@@ -182,8 +174,6 @@ namespace RD_AAOW
 				s += (n.ToString () + rolesSplitters[0].ToString ());
 				}
 
-			/*RDGenerics.SetAppSettingsValue ("RolesOrder", s);
-			*/
 			MafiaSettings.RolesOrder = s;
 			playersRolesOrder = new MafiaRolesOrder (order.ToArray ());
 
@@ -417,8 +407,6 @@ namespace RD_AAOW
 			for (int i = 0; i < players.Count; i++)
 				savedPlayers += (players[i].Name + RDLocale.RN);
 
-			/*RDGenerics.SetAppSettingsValue ("PlayersList", savedPlayers);
-			*/
 			MafiaSettings.PlayersList = savedPlayers;
 
 			// Запрос изменённого списка
@@ -432,8 +420,7 @@ namespace RD_AAOW
 			// Загрузка сохранённых игроков
 			savedPlayers = mplf.PlayersList;
 			mplf.Dispose ();
-			/*RDGenerics.SetAppSettingsValue ("PlayersList", savedPlayers);
-			*/
+
 			MafiaSettings.PlayersList = savedPlayers;
 
 			players.Clear ();

@@ -10,7 +10,7 @@
 - [Implemented roles](#implemented-roles)
 - [Features of the application](#features-of-the-application)
 - [Download links](https://adslbarxatov.github.io/DPArray#mafia-helper)
-- [Русская версия](https://adslbarxatov.github.io/MafiaHelper/ru)
+- [Версия на русском языке](https://adslbarxatov.github.io/MafiaHelper/ru)
 
 ---
 

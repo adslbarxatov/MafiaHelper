@@ -86,7 +86,7 @@ namespace RD_AAOW
 				}
 			catch
 				{
-				RDGenerics.MessageBox (RDMessageTypes.Warning_Center,
+				RDInterface.MessageBox (RDMessageTypes.Warning_Center,
 					RDLocale.GetDefaultText (RDLDefaultTexts.Message_PackageSavingFailure));
 				}
 			}
@@ -117,7 +117,7 @@ namespace RD_AAOW
 		// Запрос справки
 		private void AboutButton_Clicked (object sender, EventArgs e)
 			{
-			RDGenerics.ShowAbout (false);
+			RDInterface.ShowAbout (false);
 			}
 
 		// Закрытие окна

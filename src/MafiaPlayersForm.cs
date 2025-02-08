@@ -119,14 +119,14 @@ namespace RD_AAOW
 			// Контроль числа игроков
 			if (players.Count < minPlayers)
 				{
-				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughPlayersMessage");
+				RDInterface.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughPlayersMessage");
 				return;
 				}
 
 			// (вообще, такого быть не должно, конечно)
 			if (players.Count > maxPlayers)
 				{
-				RDGenerics.MessageBox (RDMessageTypes.Warning_Center,
+				RDInterface.MessageBox (RDMessageTypes.Warning_Center,
 					string.Format (RDLocale.GetText ("TooMuchPlayersMessage"), maxPlayers));
 				return;
 				}
@@ -136,7 +136,7 @@ namespace RD_AAOW
 			uint yakuza = counters[(int)MafiaPlayerRoles.Yakuza] + counters[(int)MafiaPlayerRoles.YakuzaBoss];
 			if ((mafia + yakuza > players.Count / 2) || (mafia < 1))
 				{
-				RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughRolesMessage");
+				RDInterface.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughRolesMessage");
 				return;
 				}
 
@@ -145,7 +145,7 @@ namespace RD_AAOW
 				{
 				if (!MafiaPlayer.RoleCanBeTeam ((MafiaPlayerRoles)i) && (counters[i] > 1))
 					{
-					RDGenerics.LocalizedMessageBox (RDMessageTypes.Warning_Center, "TooMuchSecondaryRolesMessage");
+					RDInterface.LocalizedMessageBox (RDMessageTypes.Warning_Center, "TooMuchSecondaryRolesMessage");
 					return;
 					}
 				}
@@ -208,7 +208,7 @@ namespace RD_AAOW
 		// Открытие ссылки на правила игры
 		private void BRules_Click (object sender, EventArgs e)
 			{
-			RDGenerics.ShowAbout (false);
+			RDInterface.ShowAbout (false);
 			}
 
 		// Сортировка ролей
@@ -373,7 +373,7 @@ namespace RD_AAOW
 		private void ResetRoles_Click (object sender, EventArgs e)
 			{
 			// Выбор варианта
-			RDMessageButtons res = RDGenerics.MessageBox (RDMessageTypes.Warning_Center,
+			RDMessageButtons res = RDInterface.MessageBox (RDMessageTypes.Warning_Center,
 				RDLocale.GetText ("PlayersClearMessage"), RDLocale.GetText ("RolesButton"),
 				RDLocale.GetText ("AllButton"), RDLocale.GetDefaultText (RDLDefaultTexts.Button_Cancel));
 			if (res == RDMessageButtons.ButtonThree)

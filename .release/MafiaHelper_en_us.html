@@ -1,0 +1,164 @@
+﻿<html charset='utf-8'>
+<head>
+<title>Mafia helper: user guide | MafiaHelper</title>
+</head>
+
+<body>
+
+<h1 id="mafia-helper-user-guide">Mafia helper: user guide</h1>
+
+<h3 id="page-contents">Page contents</h3>
+<ul>
+<li><a href="#general-information">General information</a></li>
+<li><a href="#implemented-game-rules">Implemented game rules</a></li>
+<li><a href="#implemented-roles">Implemented roles</a></li>
+<li><a href="#features-of-the-application">Features of the application</a></li>
+</ul>
+<hr />
+<h3 id="general-information">General information</h3>
+<p><em><strong>MafiaHelper</strong></em> is the moderator’s assistant for the game “Mafia”. It allows you to track
+the current statuses of players, their roles, and also process their use according to the rules
+of the game.</p>
+<p><em><strong>Since there are many variants of “Mafia”, this guide will outline the rules that are included
+in the current version of the application. They may not comply with official competition requirements
+and may be changed or supplemented in new versions of the product.</strong></em></p>
+
+<p> </p>
+<h3 id="implemented-game-rules">Implemented game rules</h3>
+<p>The game can be played by 5 to 30 people inclusive. There is also a person moderating the game and using
+this application.</p>
+
+<p>When you start the app, similar to the game itself, you’re prompted to specify the names of players
+and their roles. In reality, this is done using simple playing cards or special thematic cards. They’re
+distributed to players “in private”. Everyone (except the moderator) gets one role, which initially
+only he / she knows.</p>
+<p>Next, <em><strong>zero night</strong></em> is announced, and all players close their eyes (usually with their hands or masks,
+options are possible). The moderator takes turns interviewing the roles present in the game (except for
+<code>townspeople</code>) in order to “get to know” the players who got them. The information received is entered
+into the application.</p>
+
+<p>Then a <em><strong>zero day</strong></em> is announced (the app is not used), during which players implement representative
+functions related to the game process. The players see each other. This requires each of them to carefully
+simulate the absence of any special role.</p>
+<blockquote>
+<p>The essence of the gameplay is the confrontation between civilians and the mafia. Each team strives
+to destroy the enemy. The psychological emphasis is on the confrontation between the organized minority
+(there are initially fewer mafia in the game, but players with this role recognize each other when they
+first meet and act together) and the unorganized majority (there are more civilians, but they don’t know
+about the roles of other players). Further actions are based on this.</p>
+</blockquote>
+<p>The <em><strong>first night</strong></em> is announced (players close their eyes). The presenter takes turns interviewing
+the roles (except for <code>townspeople</code>). The respective players open their eyes and point to some other
+player (in some cases you can point to them or skip a turn) to whom they want to apply the action
+of their role. The moderator makes appropriate notes in the app. Having completed the role, the player
+closes his eyes.</p>
+
+<p>After interviewing all the roles, the moderator announces the <em><strong>first day</strong></em>. When this action is performed,
+the app processes the specified notes and displays the changed statuses of players.</p>
+
+<p>The moderator announces the changes that have occurred. Players use this information to discuss and make
+assumptions about who the mafia is and how other roles are distributed. Naturally, players can pretend
+and mislead each other in order to last longer in the game.</p>
+<p>At the end of the day, a vote is held, based on the results of which one of the players is “executed”
+(he leaves the game). A corresponding note is made in the app. As a rule, a certain time is allocated
+for voting and discussion. If after its expiration the decision is not made, the “execution” is cancelled.</p>
+<p>This is followed again by a night, during which actions similar to those described for the first night
+are performed, but with a changed composition of players. The cycle of day and night phases continues
+until a winning situation is achieved. For the <em><strong>mafia</strong></em>, a victory is considered to be the state
+when there are more players with this role than all the others combined (loss becomes mathematically
+impossible). Victory for <em><strong>civilians</strong></em> will only be the complete destruction of the mafia.</p>
+
+<p> </p>
+<h3 id="implemented-roles">Implemented roles</h3>
+<p>In the current version, each role in the game is associated with one available action. Additionally,
+some roles have certain “abilities”.</p>
+<p><em><strong>Townspeople</strong></em> – an ordinary resident of the city, the main composition of the game. He always sleeps
+at night, therefore doesn’t know the roles of other players.
+During the day, by voting together with the rest of the “living” players, he can choose
+one player and “execute” him (such a player leaves the game). He has no other possibilities.
+<em>Available on all days</em>.</p>
+<p><em><strong>Mafia</strong></em> is an organized group of players opposing civilians (and <code>yakuza</code>). During the day, he can participate
+in voting and discussion, imitating civilians or other roles. At night, he can choose one player
+to “kill”. <em>Available on all nights</em>.</p>
+<p><em><strong>Yakuza</strong></em> is the same role as <code>mafia</code> but works as another one team of players (opposing both civilians and <code>mafia</code>).</p>
+<p><em><strong>Doctor</strong></em> – a civilian. Action at night – saving the specified player from “murder” (prevents <code>mafia</code>, <code>yakuza</code>,
+<code>sheriff</code> and <code>ripper</code> action).
+<em>Available on all nights</em>.</p>
+<p><em><strong>Detective</strong></em> – a civilian. Action at night – finding out the role of the specified player (the moderator
+tells him with signs whether the specified player belongs to the mafia or not). He can use the collected
+information in the day’s discussion. Roles of the <code>mafia boss</code> and the <code>yakuza boss</code> cannot be revealed (the moderator will
+give a “civilian” sign). <code>Detective</code> may become a <code>sheriff</code> if the <code>sheriff</code> dies first. <em>Available on all nights</em>.</p>
+<p><em><strong>Prostitute / beauty</strong></em> – a conditionally civilian. Action at night – saving the specified player
+(prevents <code>mafia</code>, <code>sheriff</code> and <code>ripper</code> action). But, unlike the <code>doctor</code>, if a player
+with this role dies (killed by <code>mafia</code> or <code>ripper</code>), he “takes with him” the player he saved.</p>
+<p><em><strong>Maniac</strong></em> – a conditionally civilian. Action at night – remove a living player from the vote. The victim
+cannot vote for the next day.</p>
+<p><em><strong>Priest / immortal</strong></em> – a civilian. Has no effect. Can be killed only in three cases:</p>
+<ul>
+<li>when his role is stolen by a <code>thief</code>;</li>
+<li>when he ended up with a <code>beauty</code> whom the <code>mafia</code> or <code>ripper</code> came to;</li>
+<li>when a <code>kamikaze</code> points at him.</li>
+</ul>
+<p><em><strong>Thief</strong></em> – a conditionally civilian. The action at night is to “disable the role” of the specified player.
+The victim doesn’t know that her role has been “stolen” and acts as usual. But her actions will not have
+an effect during the current night (the <code>doctor</code> and the <code>beauty</code> will not be able to save, the <code>detective</code>
+will receive the wrong answer from the moderator, the <code>priest</code> will lose protection, the <code>maniac</code> will not
+change the victim’s condition).
+<em>In relation to the <code>mafia</code>, the use of the role is controversial, because it is represented by several players</em>.
+<em>In order for the role to work, it is the first called role in the app</em>.</p>
+<p><em><strong>Kamikaze</strong></em> – a conditionally civilian. The action during the day is to destroy one player along with
+himself (both players leave the game). Usually has a spontaneous character, that is, it’s a source of randomness
+in the game.</p>
+<p><em><strong>Don / mafia boss</strong></em> – part of <code>mafia</code>. He doesn’t have a separate action; he plays the role of the <code>mafia</code>
+in composition. Boss is protected from disclosure of the role by the <code>detective</code>. He is counted as a <code>mafia</code> when
+determining the victory of one of teams.</p>
+<p><em><strong>Oyabun / yakuza boss</strong></em> – the same role as <code>mafia boss</code> but for <code>yakuza</code>.</p>
+<p><em><strong>Sheriff</strong></em> – a civilian. Action at night – killing mafia members. If he “hits” civilians, his role doesn’t work.
+<em>Available on all nights</em>.</p>
+<p><em><strong>Ripper</strong></em> – a conditionally civilian. The action at night is to destroy one player (unlike the <code>kamikaze</code>,
+he himself doesn’t leave the game). He also has a spontaneous character, that is, it’s a source of randomness in the game.</p>
+<p><em><strong>Judge</strong></em> – a civilian. The action at night is to protect one player from execution. The next voting
+will take no effect on the protected player.</p>
+<p> </p>
+<p>The following are allowed in the game:</p>
+<ul>
+<li>at least one, but not more than 50% of players with the <code>mafia</code> role (including the <code>mafia boss</code>);</li>
+<li>not more than 50% of players with <code>mafia</code> and <code>yakuza</code> roles (combined, including bosses) if <code>yakuza</code> is presented;</li>
+<li>no more than one player in any role other than <code>townspeople</code>, <code>mafia</code> and <code>yakuza</code>;</li>
+<li>unlimited number of <code>townspeople</code> (those left without a special role).</li>
+</ul>
+<p> </p>
+<h3 id="features-of-the-application">Features of the application</h3>
+<p>The <em><strong>initial application interface</strong></em> allows you to:</p>
+<ul>
+<li>select the interface language;</li>
+<li>configure app notifications;</li>
+<li>set the number of the first night when non-default roles (other than <code>townspeople</code>, <code>mafia</code>, <code>detective</code>, <code>doctor</code> and <code>sheriff</code>) become playable;</li>
+<li>specify the directory with the background music;</li>
+<li>access a full range of app and Lab help and support resources.</li>
+</ul>
+<p>The <em><strong>interface for entering names and roles of players</strong></em> performs:</p>
+<ul>
+<li>managing, saving and ordering of players names;</li>
+<li>independent control of the distribution of roles and the correctness of the input. In this case,
+the specified names are remembered for use in the next game, and the specified roles are reset after
+exiting the current session.</li>
+<li>processing the specified order of application of roles.</li>
+</ul>
+<p>The <em><strong>gaming activity tracking interface</strong></em> has the following capabilities:</p>
+<ul>
+<li>displaying tooltips when you hover over abbreviations in the “roles” and “statuses” columns;</li>
+<li>displaying of changing player statuses and sequence with color indication;</li>
+<li>displaying a dynamic context menu when pressing buttons in the “actions” column, which contains only those actions that are currently available;</li>
+<li>obvious transition between day and night phases with display of actions performed and their results;</li>
+<li>control of intersecting rules;</li>
+<li>control of timer with several preset intervals and audible alarm;</li>
+<li>launch a random music track from the directory specified in the app settings (for night phases);</li>
+<li>collecting completed actions in a timeline;</li>
+<li>watching the game log in the build-in viewer;</li>
+<li>displaying messages about incorrect application of roles;</li>
+<li>displaying messages about team win / loss</li>
+</ul>
+
+</body>
+</html>

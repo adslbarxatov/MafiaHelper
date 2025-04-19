@@ -78,11 +78,11 @@ namespace RD_AAOW
 			try
 				{
 				if (!File.Exists (EndTone))
-					File.WriteAllBytes (EndTone, Properties.MafiaHelper.EndTone);
+					File.WriteAllBytes (EndTone, MafiaHelperResources.EndTone);
 				if (!File.Exists (MidTone))
-					File.WriteAllBytes (MidTone, Properties.MafiaHelper.MidTone);
+					File.WriteAllBytes (MidTone, MafiaHelperResources.MidTone);
 				if (!File.Exists (LongTone))
-					File.WriteAllBytes (LongTone, Properties.MafiaHelper.LongTone);
+					File.WriteAllBytes (LongTone, MafiaHelperResources.LongTone);
 				}
 			catch
 				{

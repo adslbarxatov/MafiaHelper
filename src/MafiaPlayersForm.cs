@@ -10,10 +10,10 @@ namespace RD_AAOW
 	public partial class MafiaPlayersForm: Form
 		{
 		// Переменные и константы
-		private char[] linesSplitters = new char[] { '\r', '\n' };
-		private char[] rolesSplitters = new char[] { '\t', ' ' };
+		private char[] linesSplitters = ['\r', '\n'];
+		private char[] rolesSplitters = ['\t', ' '];
 		private string rolesAliases;
-		private List<string> rolesNames = new List<string> ();
+		private List<string> rolesNames = [];
 
 		private const uint minPlayers = 5;
 		private const uint maxPlayers = 30;
@@ -54,7 +54,7 @@ namespace RD_AAOW
 			// Стандартный или сохранённый ранее порядок
 			string[] v = MafiaSettings.RolesOrder.Split (rolesSplitters,
 				StringSplitOptions.RemoveEmptyEntries);
-			List<int> order = new List<int> ();
+			List<int> order = [];
 
 			int count = MafiaRolesOrder.DefaultNightRolesOrder.Length;
 
@@ -159,7 +159,7 @@ namespace RD_AAOW
 
 			// Сохранение порядка применения ролей
 			string s = "";
-			List<int> order = new List<int> ();
+			List<int> order = [];
 			for (int i = 0; i < RolesFirstOrder.Items.Count; i++)
 				{
 				int n = rolesAliases.IndexOf (RolesFirstOrder.Items[i].ToString ().Substring (0, 1));
@@ -191,7 +191,7 @@ namespace RD_AAOW
 				return players;
 				}
 			}
-		private List<MafiaPlayer> players = new List<MafiaPlayer> ();
+		private List<MafiaPlayer> players = [];
 
 		/// <summary>
 		/// Возвращает обработчик порядка применения ролей
@@ -249,7 +249,7 @@ namespace RD_AAOW
 		private string[] GetAvailableRoles ()
 			{
 			// Определение занятых ролей
-			List<int> lcRoles = new List<int> ();
+			List<int> lcRoles = [];
 			for (int i = 0; i < players.Count; i++)
 				{
 				if (MafiaPlayer.RoleCanBeTeam (players[i].Role))
@@ -261,7 +261,7 @@ namespace RD_AAOW
 				}
 
 			// Формирование списка незанятых ролей
-			List<string> avRoles = new List<string> ();
+			List<string> avRoles = [];
 			for (int i = 0; i < rolesNames.Count; i++)
 				if (!lcRoles.Contains (i))
 					avRoles.Add (rolesNames[i]);

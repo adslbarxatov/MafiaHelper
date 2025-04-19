@@ -1,42 +1,75 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using RD_AAOW;
+using System.Reflection;
+using System.Resources;
+
+// Управление общими сведениями о сборке
+// ВИДИМЫЕ СТРОКИ
+[assembly: AssemblyTitle (ProgramDescription.AssemblyDescription)]
+[assembly: AssemblyCompany (RDGenerics.AssemblyCompany)]
+// НЕВИДИМЫЕ СТРОКИ
+[assembly: AssemblyDescription (ProgramDescription.AssemblyDescription)]
+[assembly: AssemblyProduct (ProgramDescription.AssemblyTitle)]
+[assembly: AssemblyCopyright (RDGenerics.AssemblyCopyright)]
+[assembly: AssemblyVersion (ProgramDescription.AssemblyVersion)]
 
 namespace RD_AAOW
 	{
 	/// <summary>
-	/// Класс описывает точку входа приложения
+	/// Класс, содержащий сведения о программе
 	/// </summary>
-	public static class MafiaHelperProgram
+	public class ProgramDescription
 		{
 		/// <summary>
-		/// Главная точка входа для приложения
+		/// Название программы
 		/// </summary>
-		[STAThread]
-		public static void Main ()
-			{
-			// Инициализация
-			Application.EnableVisualStyles ();
-			Application.SetCompatibleTextRenderingDefault (false);
+		public const string AssemblyTitle = AssemblyMainName + " v 2.1";
 
-			// Язык интерфейса и контроль XPUN
-			if (!RDLocale.IsXPUNClassAcceptable)
-				return;
+		/// <summary>
+		/// Версия программы
+		/// </summary>
+		public const string AssemblyVersion = "2.1.0.0";
 
-			// Проверка запуска единственной копии
-			if (!RDGenerics.IsAppInstanceUnique (true))
-				return;
+		/// <summary>
+		/// Последнее обновление
+		/// </summary>
+		public const string AssemblyLastUpdate = "20.04.2025; 2:45";
 
-			// Контроль прав
-			if (!RDGenerics.AppHasAccessRights (true, true))
-				return;
+		/// <summary>
+		/// Пояснение к программе
+		/// </summary>
+		public const string AssemblyDescription = "Moderator’s helper for the game “Mafia”";
 
-			// Отображение справки и запроса на принятие Политики
-			if (!RDInterface.AcceptEULA ())
-				return;
-			RDInterface.ShowAbout (true);
+		/// <summary>
+		/// Основное название сборки
+		/// </summary>
+		public const string AssemblyMainName = "MafiaHelper";
 
-			// Запуск
-			Application.Run (new MafiaHelperForm ());
-			}
+		/// <summary>
+		/// Возвращает список менеджеров ресурсов для локализации приложения
+		/// </summary>
+		public readonly static ResourceManager[] AssemblyResources = [
+			MafiaHelperResources.ResourceManager,
+
+			MafiaHelper_ru_ru.ResourceManager,
+			MafiaHelper_en_us.ResourceManager,
+			];
+
+		/// <summary>
+		/// Возвращает набор ссылок на видеоматериалы по языкам
+		/// </summary>
+		public readonly static string[] AssemblyVideoLinks = [];
+
+		/// <summary>
+		/// Возвращает набор поддерживаемых языков
+		/// </summary>
+		public readonly static RDLanguages[] AssemblyLanguages = [
+			RDLanguages.ru_ru,
+			RDLanguages.en_us,
+			];
+
+		/// <summary>
+		/// Возвращает описание сопоставлений файлов для приложения
+		/// </summary>
+		public readonly static string[][] AssemblyAssociations = [];
 		}
 	}

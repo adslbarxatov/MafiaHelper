@@ -40,12 +40,12 @@ namespace RD_AAOW
 				start = LogText.GetFirstCharIndexFromLine (i);
 				end = LogText.GetFirstCharIndexFromLine (i + 1);
 
-				if (LogText.Lines[i].StartsWith ("["))
+				if (LogText.Lines[i].StartsWith ('['))
 					{
 					LogText.Select (start, end - start);
 
 					LogText.SelectionFont = new Font (LogText.Font, FontStyle.Bold);
-					if (LogText.Lines[i].Contains ("!"))
+					if (LogText.Lines[i].Contains ('!'))
 						LogText.SelectionColor = Color.OrangeRed;
 					else
 						LogText.SelectionColor = Color.DarkBlue;
@@ -54,9 +54,9 @@ namespace RD_AAOW
 					continue;
 					}
 
-				if (LogText.Lines[i].Contains (":"))
+				if (LogText.Lines[i].Contains (':'))
 					{
-					end = LogText.Lines[i].IndexOf (":");
+					end = LogText.Lines[i].IndexOf (':');
 					LogText.Select (start, end + 1);
 
 					LogText.SelectionFont = new Font (LogText.Font, FontStyle.Bold);
@@ -67,7 +67,8 @@ namespace RD_AAOW
 
 				if (LogText.Lines[i].Contains (MafiaGameForm.ActionSplitter))
 					{
-					start = start + LogText.Lines[i].IndexOf (MafiaGameForm.ActionSplitter);
+					/*start = start + LogText.Lines[i].IndexOf (MafiaGameForm.ActionSplitter);*/
+					start += LogText.Lines[i].IndexOf (MafiaGameForm.ActionSplitter);
 					end = LogText.Text.IndexOf (MafiaGameForm.ActionSplitter,
 						start + MafiaGameForm.ActionSplitter.Length);
 					LogText.Select (start, end + MafiaGameForm.ActionSplitter.Length - start);

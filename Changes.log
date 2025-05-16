@@ -1,5 +1,8 @@
 Mafia helper: changes log
 
+Version 2.1.1:
+• Added support for new offline help provider
+
 Version 2.1:
 • The application has been migrated to .NET 9.0 from .NET Framework 4.8.1
 

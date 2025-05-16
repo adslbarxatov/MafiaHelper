@@ -67,7 +67,6 @@ namespace RD_AAOW
 
 				if (LogText.Lines[i].Contains (MafiaGameForm.ActionSplitter))
 					{
-					/*start = start + LogText.Lines[i].IndexOf (MafiaGameForm.ActionSplitter);*/
 					start += LogText.Lines[i].IndexOf (MafiaGameForm.ActionSplitter);
 					end = LogText.Text.IndexOf (MafiaGameForm.ActionSplitter,
 						start + MafiaGameForm.ActionSplitter.Length);

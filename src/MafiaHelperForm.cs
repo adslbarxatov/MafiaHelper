@@ -86,7 +86,7 @@ namespace RD_AAOW
 				}
 			catch
 				{
-				RDInterface.MessageBox (RDMessageTypes.Warning_Center,
+				RDInterface.MessageBox (RDMessageFlags.Warning | RDMessageFlags.CenterText,
 					RDLocale.GetDefaultText (RDLDefaultTexts.Message_PackageSavingFailure));
 				}
 			}

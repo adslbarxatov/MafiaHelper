@@ -144,7 +144,8 @@ namespace RD_AAOW
 			{
 			if (string.IsNullOrWhiteSpace (PlayerName.Text))
 				{
-				RDInterface.LocalizedMessageBox (RDMessageTypes.Warning_Center, "PlayerNameEmptyMessage", 1000);
+				RDInterface.LocalizedMessageBox (RDMessageFlags.Warning | RDMessageFlags.CenterText,
+					"PlayerNameEmptyMessage", 1000);
 				return;
 				}
 

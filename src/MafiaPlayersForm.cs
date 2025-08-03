@@ -119,14 +119,15 @@ namespace RD_AAOW
 			// Контроль числа игроков
 			if (players.Count < minPlayers)
 				{
-				RDInterface.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughPlayersMessage");
+				RDInterface.LocalizedMessageBox (RDMessageFlags.Warning | RDMessageFlags.CenterText,
+					"NotEnoughPlayersMessage");
 				return;
 				}
 
 			// (вообще, такого быть не должно, конечно)
 			if (players.Count > maxPlayers)
 				{
-				RDInterface.MessageBox (RDMessageTypes.Warning_Center,
+				RDInterface.MessageBox (RDMessageFlags.Warning | RDMessageFlags.CenterText,
 					string.Format (RDLocale.GetText ("TooMuchPlayersMessage"), maxPlayers));
 				return;
 				}
@@ -136,7 +137,8 @@ namespace RD_AAOW
 			uint yakuza = counters[(int)MafiaPlayerRoles.Yakuza] + counters[(int)MafiaPlayerRoles.YakuzaBoss];
 			if ((mafia + yakuza > players.Count / 2) || (mafia < 1))
 				{
-				RDInterface.LocalizedMessageBox (RDMessageTypes.Warning_Center, "NotEnoughRolesMessage");
+				RDInterface.LocalizedMessageBox (RDMessageFlags.Warning | RDMessageFlags.CenterText,
+					"NotEnoughRolesMessage");
 				return;
 				}
 
@@ -145,7 +147,8 @@ namespace RD_AAOW
 				{
 				if (!MafiaPlayer.RoleCanBeTeam ((MafiaPlayerRoles)i) && (counters[i] > 1))
 					{
-					RDInterface.LocalizedMessageBox (RDMessageTypes.Warning_Center, "TooMuchSecondaryRolesMessage");
+					RDInterface.LocalizedMessageBox (RDMessageFlags.Warning | RDMessageFlags.CenterText,
+						"TooMuchSecondaryRolesMessage");
 					return;
 					}
 				}
@@ -373,7 +376,7 @@ namespace RD_AAOW
 		private void ResetRoles_Click (object sender, EventArgs e)
 			{
 			// Выбор варианта
-			RDMessageButtons res = RDInterface.MessageBox (RDMessageTypes.Warning_Center,
+			RDMessageButtons res = RDInterface.MessageBox (RDMessageFlags.Warning | RDMessageFlags.CenterText,
 				RDLocale.GetText ("PlayersClearMessage"), RDLocale.GetText ("RolesButton"),
 				RDLocale.GetText ("AllButton"), RDLocale.GetDefaultText (RDLDefaultTexts.Button_Cancel));
 			if (res == RDMessageButtons.ButtonThree)
